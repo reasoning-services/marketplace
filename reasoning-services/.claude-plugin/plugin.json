@@ -1,0 +1,11 @@
+{
+  "name": "reasoning-services",
+  "description": "Structured reasoning tools for AI workflows — isolated cognitive sessions with persistent state and structured output",
+  "author": {
+    "name": "reasoning-services",
+    "email": "contact@reasoning.services"
+  },
+  "homepage": "https://reasoning.services",
+  "repository": "https://github.com/reasoning-services/marketplace",
+  "license": "MIT"
+}
