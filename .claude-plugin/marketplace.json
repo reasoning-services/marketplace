@@ -1,0 +1,23 @@
+{
+  "name": "reasoning-services-marketplace",
+  "description": "Structured reasoning tools for AI workflows — isolated cognitive sessions that don't pollute your context or reinforce your biases",
+  "owner": {
+    "name": "reasoning-services",
+    "email": "contact@reasoning.services"
+  },
+  "plugins": [
+    {
+      "name": "reasoning-services",
+      "description": "4 reasoning tools: Structured Reflection, Decision Matrix, Context Switcher, and Sequential Thinking. Isolated reasoning sessions with persistent state and structured output.",
+      "source": "./reasoning-services",
+      "version": "1.0.0",
+      "author": {
+        "name": "reasoning-services",
+        "email": "contact@reasoning.services"
+      },
+      "homepage": "https://reasoning.services",
+      "category": "productivity",
+      "tags": ["reasoning", "thinking", "decisions", "analysis", "reflection", "mcp", "cognitive"]
+    }
+  ]
+}

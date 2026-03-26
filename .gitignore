@@ -1,0 +1,10 @@
+*
+!.gitignore
+!.claude-plugin/
+!.claude-plugin/**
+!reasoning-services/
+!reasoning-services/**
+!CLAUDE.md
+!README.md
+!LICENSE
+!CHANGELOG.md

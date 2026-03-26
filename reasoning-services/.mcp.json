@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "structured-reflection": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/structured-reflection/mcp"
+    },
+    "decision-matrix": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/decision-matrix/mcp"
+    },
+    "context-switcher": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/context-switcher/mcp"
+    },
+    "sequential-thinking": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/sequential-thinking/mcp"
+    }
+  }
+}
