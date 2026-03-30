@@ -4,6 +4,8 @@
 !.claude-plugin/**
 !reasoning-services/
 !reasoning-services/**
+!docs/
+!docs/**
 !CLAUDE.md
 !README.md
 !LICENSE
