@@ -1,6 +1,9 @@
 {
   "name": "reasoning-services-marketplace",
-  "description": "Structured reasoning tools for AI workflows — isolated cognitive sessions that don't pollute your context or reinforce your biases",
+  "metadata": {
+    "description": "Structured reasoning tools for AI workflows — isolated cognitive sessions that don't pollute your context or reinforce your biases",
+    "version": "1.0.0"
+  },
   "owner": {
     "name": "reasoning-services",
     "email": "contact@reasoning.services"
