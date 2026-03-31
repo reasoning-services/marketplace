@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./icon.svg" width="64" alt="reasoning.services" />
+</p>
+
 # reasoning.services — Claude Code Plugin
 
 Structured reasoning tools for AI workflows. Isolated cognitive sessions that don't pollute your context or reinforce your biases.
