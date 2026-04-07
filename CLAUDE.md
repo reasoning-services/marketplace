@@ -21,11 +21,31 @@ marketplace/
 │   └── marketplace.json     # Catalog: lists all plugins in this marketplace
 ├── reasoning-services/
 │   ├── .claude-plugin/
-│   │   └── plugin.json      # Plugin manifest
+│   │   └── plugin.json      # Plugin manifest (version, keywords, category)
 │   ├── .mcp.json            # 4 MCP server connections
 │   └── skills/
-│       └── reasoning-guide/
-│           └── SKILL.md     # Tool selection guide
+│       ├── reasoning-guide/
+│       │   └── SKILL.md                    # Router: decision tree + anti-patterns
+│       ├── structured-reflection/
+│       │   ├── SKILL.md
+│       │   └── references/
+│       │       └── DEPTH-STAGES.md         # Session stage definitions and transition signals
+│       ├── decision-matrix/
+│       │   ├── SKILL.md
+│       │   └── references/
+│       │       └── SCORING-CALIBRATION.md  # Score semantics, biases, criterion types
+│       ├── context-switcher/
+│       │   ├── SKILL.md
+│       │   └── references/
+│       │       └── PERSPECTIVES.md         # Perspective combinations by domain
+│       ├── sequential-thinking/
+│       │   ├── SKILL.md
+│       │   └── references/
+│       │       └── STAGE-GUIDE.md          # Stage definitions, confidence, contradictions
+│       └── reasoning-chain/
+│           ├── SKILL.md
+│           └── references/
+│               └── CHAINING-PATTERNS.md    # Output threading, adaptation triggers
 ├── CLAUDE.md                # This file
 ├── README.md                # User-facing install guide
 ├── LICENSE                  # MIT
@@ -37,10 +57,12 @@ marketplace/
 When a new service is added, these 5 files change:
 
 1. `reasoning-services/.mcp.json` — add server entry
-2. `.claude-plugin/marketplace.json` — update plugin description (tool count) and bump `version`
+2. `.claude-plugin/marketplace.json` — update plugin description (skill/tool count) and bump `version`
 3. `reasoning-services/.claude-plugin/plugin.json` — update `description` if needed
-4. `reasoning-services/skills/reasoning-guide/SKILL.md` — add tool to selection guide
+4. `reasoning-services/skills/reasoning-guide/SKILL.md` — add tool to decision tree
 5. `CHANGELOG.md` — add entry
+
+Additionally create a new per-tool skill directory under `skills/` with `SKILL.md` and a `references/` file.
 
 ## Rules
 

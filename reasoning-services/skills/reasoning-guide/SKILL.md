@@ -1,29 +1,53 @@
 ---
-description: Select the right reasoning tool or chain multiple tools together. Use when deciding between structured reflection, decision matrix, context switcher, or sequential thinking.
+description: Routes to the correct reasoning tool. Use when selecting between structured reflection, decision matrix, context switcher, or sequential thinking — or when the right cognitive approach is unclear. Triggers on: 'help me think through this', 'which reasoning tool', 'I need to reason about', 'how should I approach this', 'help me work through', 'I need clarity on', 'think this through with me'. Decision tree: unclear or circular thinking → structured-reflection; multiple options with real trade-offs → decision-matrix; multiple stakeholders or blind-spot coverage needed → context-switcher; explicit step-by-step logic with tracked dependencies → sequential-thinking; complex decision benefiting from 2–3 connected sessions → reasoning-chain. PROACTIVELY invoke when the user's problem clearly maps to one of these patterns — don't wait to be asked.
 ---
 
-# When to Use Reasoning Tools
+# Reasoning Tool Selection
 
-These tools run reasoning in isolated sessions — separate from your main conversation context. This prevents self-reinforcing patterns and context pollution.
+These tools run reasoning in isolated sessions — separate from your main conversation context. Isolation prevents self-reinforcing patterns and keeps thousands of tokens of internal reasoning out of the user's working context.
 
-## Tool Selection
+## Decision Tree
 
-**Structured Reflection** — Use when thinking feels muddy, you're stuck on a problem, or you need to work through complex logic. Articulating to an external session forces clarity.
+### structured-reflection
+- Thinking feels muddy, circular, or stuck
+- The user can't articulate why something feels wrong
+- A problem needs to be voiced to be understood
+- Assumptions need surfacing or challenging
 
-**Decision Matrix** — Use when multiple viable options exist with meaningful trade-offs and you need systematic comparison against weighted criteria. Produces structured scoring.
+### decision-matrix
+- Multiple viable options with real trade-offs exist
+- Criteria can be weighted and applied consistently across options
+- A defensible, structured comparison is needed
+- The decision needs to be explained or defended to others
 
-**Context Switcher** — Use when a decision affects multiple stakeholders or teams, when designing APIs or interfaces, or when you need to surface blind spots from different roles. Runs parallel perspectives.
+### context-switcher
+- A decision affects multiple stakeholders or teams
+- Designing APIs, interfaces, or systems with multiple consumers
+- Blind spots from a single perspective are a meaningful risk
+- Organizational or cross-functional impact is significant
 
-**Sequential Thinking** — Use when a problem needs step-by-step linear reasoning with explicit confidence tracking, dependency mapping, and contradiction detection.
+### sequential-thinking
+- The problem requires explicit step-by-step linear reasoning
+- Dependencies between steps must be tracked
+- Confidence per step needs to be visible
+- Contradictions in the reasoning must be detected and resolved
 
-## Chaining Pattern
+### reasoning-chain
+- The problem spans multiple cognitive modes (unclear framing AND options AND stakeholders)
+- Problem framing must be resolved before options can be evaluated
+- Output from one session should explicitly inform the setup of the next
+- A two or three-tool workflow is warranted by the problem's complexity
 
-For complex decisions, chain tools in sequence:
+## Anti-Patterns
 
-1. **Reflect** — Articulate the actual problem (Structured Reflection)
-2. **Explore** — Surface blind spots (Context Switcher)
-3. **Decide** — Systematic evaluation (Decision Matrix)
+**Don't chain tools reflexively.** Not every complex question needs three reasoning sessions. A chain that produces three outputs nobody reads adds overhead without insight.
 
-## Key Principle
+**Don't use decision-matrix for false trade-offs.** If one option clearly dominates, scoring it adds ceremony without analysis.
 
-The synthesis happens in the user's head, not in a self-reinforcing loop. Each tool returns structured output — decisions, scores, concerns, alternatives — back to the main conversation without polluting it with thousands of tokens of internal reasoning.
+**Don't use context-switcher when one stakeholder is the only one who matters.** Three perspectives on an internal implementation detail is overhead, not insight.
+
+**Don't use sequential-thinking for fuzzy problems.** Linear reasoning requires well-defined premises. Muddy problems belong in structured-reflection first.
+
+## Output Handling
+
+Each tool returns structured output — scores, insights, perspectives, reasoning chains. Route it back into the main conversation. Don't continue reasoning inside the tool past its purpose. Synthesis belongs in the user's head, not in a compounding loop.
