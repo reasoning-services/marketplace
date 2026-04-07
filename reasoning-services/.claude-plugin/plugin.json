@@ -1,6 +1,9 @@
 {
   "name": "reasoning-services",
-  "description": "Structured reasoning tools for AI workflows — isolated cognitive sessions with persistent state and structured output",
+  "version": "2.0.0",
+  "description": "4 reasoning engines + 6 skills for structured thinking: Structured Reflection, Decision Matrix, Context Switcher, Sequential Thinking, Reasoning Chain orchestration, and a routing guide. Isolated cognitive sessions with persistent state, structured output, and intensity steering.",
+  "keywords": ["reasoning", "thinking", "decisions", "analysis", "reflection", "mcp", "cognitive", "bias", "perspectives", "matrix"],
+  "category": "productivity",
   "author": {
     "name": "reasoning-services",
     "email": "contact@reasoning.services"
