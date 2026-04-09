@@ -1,5 +1,5 @@
 ---
-description: Use when thinking feels muddy, you're going in circles, or you need to articulate a problem to force clarity. Runs in an isolated session — won't pollute your main context or reinforce existing patterns. Triggers on: 'I'm stuck', 'talk this through', 'help me think out loud', 'something feels wrong but I can't name it', 'I keep coming back to this', 'I can't articulate why', 'thinking feels unclear', 'need to process this', 'help me clarify my thinking', 'I'm going in circles'. INTENSITY STEERING: when user says 'challenge me', 'push back', 'go deep', 'don't let me off easy', or 'I keep coming back to this' → use style=challenging with 8–12 reflection turns and call get_insights at midpoint (turns 5–6) and at conclusion. When user says 'quick take', 'help me unstick', 'rubber duck this', or 'just let me think' → use style=conversational or quick with 3–4 turns, get_insights at conclusion only. Default: style=analytical, 5–7 turns, get_insights at conclusion.
+description: "Use when thinking feels muddy, circular, or stuck. Runs an isolated reflection session — won't pollute your main context. Invoke with: 'I'm stuck', 'talk this through', 'help me think out loud', 'something feels wrong but I can't name it', 'I keep coming back to this'."
 ---
 
 # Structured Reflection

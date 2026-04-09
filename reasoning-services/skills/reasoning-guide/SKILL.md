@@ -1,5 +1,5 @@
 ---
-description: Routes to the correct reasoning tool. Use when selecting between structured reflection, decision matrix, context switcher, or sequential thinking — or when the right cognitive approach is unclear. Triggers on: 'help me think through this', 'which reasoning tool', 'I need to reason about', 'how should I approach this', 'help me work through', 'I need clarity on', 'think this through with me'. Decision tree: unclear or circular thinking → structured-reflection; multiple options with real trade-offs → decision-matrix; multiple stakeholders or blind-spot coverage needed → context-switcher; explicit step-by-step logic with tracked dependencies → sequential-thinking; complex decision benefiting from 2–3 connected sessions → reasoning-chain. PROACTIVELY invoke when the user's problem clearly maps to one of these patterns — don't wait to be asked.
+description: "Routes to the correct reasoning tool when the right cognitive approach is unclear. Proactively invoke when the problem maps to a specific tool. Invoke with: 'help me think through this', 'which reasoning tool', 'how should I approach this', 'help me work through', 'I need clarity on'."
 ---
 
 # Reasoning Tool Selection

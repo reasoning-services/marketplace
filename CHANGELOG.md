@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.2] - 2026-04-08
+
+### Fixed
+
+- Removed redundant `version` field from `marketplace.json` plugin entry (SR-012); `plugin.json` version is authoritative and the marketplace entry was silently ignored
+
+## [2.0.1] - 2026-04-08
+
+### Fixed
+
+- All 6 `SKILL.md` descriptions wrapped in double quotes to prevent YAML parse failures on `: ` sequences; descriptions trimmed to ≤250 characters (Claude Code truncation limit) — intensity steering and trigger details remain in skill body where they always belonged
+- Removed `category` field from `plugin.json` where it was ignored; it correctly lives in `marketplace.json` only
+
+### Added
+
+- `userConfig.api_token` in `plugin.json`: prompts users for their reasoning.services API token at plugin enable time; token is stored in the system keychain (sensitive)
+- `Authorization: Bearer ${user_config.api_token}` headers in all 4 MCP server entries in `.mcp.json`: token is injected into every MCP request automatically
+
 ## [2.0.0] - 2026-04-07
 
 ### Added

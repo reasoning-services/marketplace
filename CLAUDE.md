@@ -56,7 +56,7 @@ marketplace/
 
 When a new service is added, these 5 files change:
 
-1. `reasoning-services/.mcp.json` — add server entry
+1. `reasoning-services/.mcp.json` — add server entry with `Authorization` header
 2. `.claude-plugin/marketplace.json` — update plugin description (skill/tool count) and bump `version`
 3. `reasoning-services/.claude-plugin/plugin.json` — update `description` if needed
 4. `reasoning-services/skills/reasoning-guide/SKILL.md` — add tool to decision tree

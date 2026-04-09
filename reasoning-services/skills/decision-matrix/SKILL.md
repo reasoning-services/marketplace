@@ -1,5 +1,5 @@
 ---
-description: Use when multiple viable options exist with meaningful trade-offs and systematic comparison is needed. Triggers on: 'which should I pick', 'compare these options', 'what are the trade-offs', 'evaluate these', 'pros and cons of', 'weigh these against each other', 'help me decide between', 'which is better', 'should I choose X or Y', 'I need to compare'. Returns structured scoring across weighted criteria. INTENSITY STEERING: when user says 'thorough comparison', 'I need to defend this decision', 'high stakes', 'comprehensive', 'what am I not considering', or 'board presentation' → use 6–8 criteria with full 1–5 weight range deliberately spread; proactively add 2–3 criteria via add_criterion_tool and 1–2 options the user hasn't considered via add_option_tool. When user says 'just help me pick', 'quick comparison', 'gut check my leaning', or 'low stakes' → use 3–4 criteria, weight range 2–4, no proactive additions. Default: 4–5 criteria, weight range 2–5, add criteria only if there is an obvious gap.
+description: "Use when multiple viable options exist with real trade-offs and systematic comparison is needed. Returns structured scoring across weighted criteria. Invoke with: 'which should I pick', 'compare these options', 'pros and cons of', 'help me decide between', 'should I choose X or Y'."
 ---
 
 # Decision Matrix

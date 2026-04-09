@@ -2,19 +2,31 @@
   "mcpServers": {
     "structured-reflection": {
       "type": "http",
-      "url": "https://reasoning.services/tools/structured-reflection/mcp"
+      "url": "https://reasoning.services/tools/structured-reflection/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
     },
     "decision-matrix": {
       "type": "http",
-      "url": "https://reasoning.services/tools/decision-matrix/mcp"
+      "url": "https://reasoning.services/tools/decision-matrix/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
     },
     "context-switcher": {
       "type": "http",
-      "url": "https://reasoning.services/tools/context-switcher/mcp"
+      "url": "https://reasoning.services/tools/context-switcher/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
     },
     "sequential-thinking": {
       "type": "http",
-      "url": "https://reasoning.services/tools/sequential-thinking/mcp"
+      "url": "https://reasoning.services/tools/sequential-thinking/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
     }
   }
 }

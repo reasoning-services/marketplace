@@ -1,14 +1,21 @@
 {
   "name": "reasoning-services",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "4 reasoning engines + 6 skills for structured thinking: Structured Reflection, Decision Matrix, Context Switcher, Sequential Thinking, Reasoning Chain orchestration, and a routing guide. Isolated cognitive sessions with persistent state, structured output, and intensity steering.",
   "keywords": ["reasoning", "thinking", "decisions", "analysis", "reflection", "mcp", "cognitive", "bias", "perspectives", "matrix"],
-  "category": "productivity",
   "author": {
     "name": "reasoning-services",
     "email": "contact@reasoning.services"
   },
   "homepage": "https://reasoning.services",
   "repository": "https://github.com/reasoning-services/marketplace",
-  "license": "MIT"
+  "license": "MIT",
+  "userConfig": {
+    "api_token": {
+      "title": "API Token",
+      "description": "Your reasoning.services API token — find it at reasoning.services/dashboard under Credentials",
+      "type": "string",
+      "sensitive": true
+    }
+  }
 }

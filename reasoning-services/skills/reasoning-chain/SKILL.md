@@ -1,5 +1,5 @@
 ---
-description: Orchestrates multi-tool reasoning workflows when a single tool is insufficient for the full scope of a problem. Triggers on: 'chain these tools', 'full analysis', 'use multiple reasoning tools', 'Reflect then Decide', 'comprehensive reasoning workflow', 'connect the reasoning outputs', 'deep multi-step analysis', 'I need the full picture'. Core patterns: Reflect→Explore→Decide for decisions where the problem framing is unclear before options can be evaluated; Explore→Deep-Dive→Decide for decisions requiring stakeholder analysis before systematic evaluation. PROACTIVELY invoke when the problem clearly spans multiple cognitive modes — unclear framing AND real options AND stakeholder impact. No intensity steering at the chain level — configure each tool individually within the chain when it runs.
+description: "Orchestrates multi-tool reasoning workflows when one tool is insufficient. Proactively invoke when a problem spans multiple cognitive modes: unclear framing AND real options AND stakeholder impact. Core patterns: Reflect→Explore→Decide, Explore→Deep-Dive→Decide, Reflect→Decide."
 ---
 
 # Reasoning Chain
