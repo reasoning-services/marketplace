@@ -1,4 +1,5 @@
 ---
+name: structured-reflection
 description: "Use when thinking feels muddy, circular, or stuck. Runs an isolated reflection session — won't pollute your main context. Invoke with: 'I'm stuck', 'talk this through', 'help me think out loud', 'something feels wrong but I can't name it', 'I keep coming back to this'."
 ---
 

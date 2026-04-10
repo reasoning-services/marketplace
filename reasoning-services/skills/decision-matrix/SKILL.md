@@ -1,4 +1,5 @@
 ---
+name: decision-matrix
 description: "Use when multiple viable options exist with real trade-offs and systematic comparison is needed. Returns structured scoring across weighted criteria. Invoke with: 'which should I pick', 'compare these options', 'pros and cons of', 'help me decide between', 'should I choose X or Y'."
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: context-switcher
 description: "Use when a decision affects multiple stakeholders or teams, or when you need to surface blind spots from different roles. Runs parallel perspective analysis. Invoke with: 'different perspectives', 'who else is affected', 'surface blind spots', 'how would X see this', 'who would push back'."
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: sequential-thinking
 description: "Use when a problem needs step-by-step linear reasoning with explicit confidence tracking and dependency mapping. Maintains an auditable reasoning chain. Invoke with: 'step by step', 'walk me through', 'trace this logic', 'show your reasoning', 'prove this', 'what follows from'."
 ---
 

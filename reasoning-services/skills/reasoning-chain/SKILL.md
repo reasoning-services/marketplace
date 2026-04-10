@@ -1,4 +1,5 @@
 ---
+name: reasoning-chain
 description: "Orchestrates multi-tool reasoning workflows when one tool is insufficient. Proactively invoke when a problem spans multiple cognitive modes: unclear framing AND real options AND stakeholder impact. Core patterns: Reflect→Explore→Decide, Explore→Deep-Dive→Decide, Reflect→Decide."
 ---
 

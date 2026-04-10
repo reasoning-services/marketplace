@@ -1,4 +1,5 @@
 ---
+name: reasoning-guide
 description: "Routes to the correct reasoning tool when the right cognitive approach is unclear. Proactively invoke when the problem maps to a specific tool. Invoke with: 'help me think through this', 'which reasoning tool', 'how should I approach this', 'help me work through', 'I need clarity on'."
 ---
 
