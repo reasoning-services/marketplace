@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "reasoning-services",
-      "description": "4 reasoning engines + 6 skills: Structured Reflection, Decision Matrix, Context Switcher, Sequential Thinking, Reasoning Chain orchestration, and a routing guide. Isolated reasoning sessions with persistent state, structured output, and intensity steering.",
+      "description": "4 reasoning engines + 6 skills for structured thinking: Structured Reflection, Decision Matrix, Context Switcher, Sequential Thinking, Reasoning Chain orchestration, and a routing guide. Isolated cognitive sessions with persistent state, structured output, and intensity steering.",
       "source": "./reasoning-services",
       "author": {
         "name": "reasoning-services",
