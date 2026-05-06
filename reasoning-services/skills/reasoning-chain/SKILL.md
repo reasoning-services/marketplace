@@ -1,6 +1,6 @@
 ---
 name: reasoning-chain
-description: "Orchestrates multi-tool reasoning workflows when one tool is insufficient. Proactively invoke when a problem spans multiple cognitive modes: unclear framing AND real options AND stakeholder impact. Core patterns: Reflect→Explore→Decide, Explore→Deep-Dive→Decide, Reflect→Decide."
+description: "Orchestrates multi-tool reasoning workflows when one tool is insufficient. Chains output from each stage into the next. Invoke with: 'I need to reflect then decide', 'chain these reasoning tools', 'multi-step analysis', 'this needs more than one approach', 'explore perspectives then decide'."
 ---
 
 # Reasoning Chain
