@@ -39,7 +39,7 @@ Restart Claude Code. All 4 servers appear in `/mcp`. All 6 skills load automatic
 
 All tools require a subscription. Sign up at [reasoning.services](https://reasoning.services).
 
-Claude Code prompts for OAuth credentials on first tool use.
+On first tool use, Claude Code prompts for your API token (found at [reasoning.services/dashboard](https://reasoning.services/dashboard) under Credentials). The token is stored in your system keychain — never plaintext.
 
 ## Intensity Steering
 
