@@ -2,44 +2,63 @@
   <img src="./icon.svg" width="64" alt="reasoning.services" />
 </p>
 
-# Reasoning.Services — Claude Code Plugin
+# reasoning.services
 
-Claude is great at thinking. It's terrible at thinking about its own thinking.
+**Claude is great at thinking. It's terrible at thinking about its own thinking.**
 
-When you ask Claude to reason through a complex decision inside the main conversation, it anchors on whatever it said first, reinforces its own framing, and buries the actual trade-offs in thousands of tokens of context that affect every subsequent response.
+These tools fix that. Four reasoning engines that run in isolated sessions — outside your conversation, outside your biases, outside your context window.
 
-These tools run reasoning in **isolated sessions** — completely separate from your main conversation context. No self-reinforcing patterns. No context pollution. Structured output that routes back to you, not into a compounding loop.
-
-## What You Get
-
-4 MCP servers + 6 skills, installed with two commands:
-
-| Tool | What it does |
-|------|-------------|
-| **Structured Reflection** | Work through unclear thinking in an isolated session. Forces articulation. Surfaces hidden assumptions. |
-| **Decision Matrix** | Systematic comparison against weighted criteria. Returns structured scoring across options. |
-| **Context Switcher** | Parallel perspective analysis from multiple stakeholders or roles. Surfaces blind spots. |
-| **Sequential Thinking** | Linear reasoning with explicit confidence tracking, dependency mapping, and contradiction detection. |
-
-The 6 skills teach Claude when and how to use each tool — without you having to explain the setup every time.
-
-## Install
-
-```bash
-# 1. Add this marketplace (once)
+```
 /plugin marketplace add reasoning-services/marketplace
-
-# 2. Install the plugin
 /plugin install reasoning-services@reasoning-services-marketplace
 ```
 
-Restart Claude Code. All 4 servers appear in `/mcp`. All 6 skills load automatically.
+That's it. Restart Claude Code. Four tools appear in `/mcp`.
 
-## Authentication
+---
 
-All tools require a subscription. Sign up at [reasoning.services](https://reasoning.services).
+## The Problem
 
-On first tool use, Claude Code prompts for your API token (found at [reasoning.services/dashboard](https://reasoning.services/dashboard) under Credentials). The token is stored in your system keychain — never plaintext.
+When Claude reasons inside your conversation, it:
+- Builds on its own assumptions without challenge
+- Burns context tokens on internal deliberation
+- Can't take multiple perspectives simultaneously
+- Has no structured way to compare options
+
+These tools run reasoning **externally**. The thinking happens in isolated MCP sessions. Only the structured output comes back. Your context stays clean. Your biases get challenged.
+
+## The Tools
+
+**Structured Reflection** — *When you're stuck.* Start a thinking session in isolation. Early turns explore, mid turns synthesize, late turns converge. The session adapts as you go deeper.
+
+**Decision Matrix** — *When you have options.* Define criteria, weight them, score each option. Returns structured scoring with justifications, not vibes.
+
+**Context Switcher** — *When you need other eyes.* Run the same question from 3-5 stakeholder perspectives in parallel. Surface blind spots you can't see from one viewpoint.
+
+**Sequential Thinking** — *When order matters.* Step-by-step reasoning with confidence tracking. Catches contradictions between steps. Shows the proof, not just the conclusion.
+
+## Chain Them
+
+The real power is the workflow. For high-stakes decisions:
+
+```
+Reflect  ->  Explore  ->  Decide
+
+  +-----------------+    +-----------------+    +-----------------+
+  |    Structured    |    |     Context      |    |    Decision      |
+  |    Reflection    |--->|     Switcher     |--->|     Matrix       |
+  |                  |    |                  |    |                  |
+  |  "What am I      |    |  "What would     |    |  "Score these    |
+  |   actually        |    |   security/PM/   |    |   against the    |
+  |   deciding?"      |    |   ops think?"    |    |   criteria we    |
+  |                  |    |                  |    |   surfaced"      |
+  +-----------------+    +-----------------+    +-----------------+
+        Clarity              Breadth               Decision
+```
+
+Each tool's output feeds the next. Reflection clarifies the question. Context Switcher surfaces criteria you'd miss. Decision Matrix scores options against those criteria.
+
+Claude's skills know when to suggest this chain and how to thread the output forward.
 
 ## Intensity Steering
 
@@ -47,50 +66,43 @@ Tell Claude how deep to go and it adjusts the tool invocation automatically:
 
 | Signal | Effect |
 |--------|--------|
-| "deep dive", "thorough", "go deep", "prove this" | Maximum depth — more reasoning steps, more criteria, more perspectives |
+| "deep dive", "thorough", "go deep", "prove this", "challenge me" | Maximum depth — more reasoning steps, more criteria, more perspectives, challenging mode |
 | *(no signal)* | Standard depth — matched to the problem |
-| "quick", "gut check", "just trace this", "sanity check" | Reduced depth — faster, higher-signal output |
+| "quick", "gut check", "just trace this", "sanity check", "rubber duck" | Reduced depth — faster, higher-signal output |
 
 The skills map these phrases to concrete parameter values. You don't configure anything.
 
-## Chaining Pattern
+## Try It
 
-For complex decisions, the tools are designed to chain:
+After installing, paste this:
 
-1. **Reflect** — Articulate the actual problem (Structured Reflection)
-2. **Explore** — Surface blind spots and stakeholder concerns (Context Switcher)
-3. **Decide** — Systematic evaluation (Decision Matrix)
+> I need to choose between PostgreSQL and DynamoDB for our new service. The team is small (3 engineers), we expect moderate traffic initially but need to handle spikes, and we're already running on AWS. Help me think through this properly.
 
-The `reasoning-chain` skill guides multi-tool workflows with explicit output threading between sessions.
+Watch Claude automatically reflect on the real constraints, gather perspectives from different roles, and build a scored comparison — without being told which tools to use.
 
-## Tools in Detail
+## What Gets Installed
 
-### Structured Reflection
+4 MCP server connections + 6 skills that teach Claude when and how to use them:
 
-Use when thinking feels muddy, you're stuck, or you need to articulate a problem to force clarity. The reflection session can't see your main conversation — it works from what you give it, without reinforcing what you've already said.
+| Skill | What it does |
+|-------|-------------|
+| `reasoning-guide` | Auto-detects when you need a reasoning tool and picks the right one |
+| `reflecting-structured` | Teaches Claude how to frame problems for reflection sessions |
+| `deciding-with-matrix` | Teaches Claude how to set up criteria, interpret scores, flag close calls |
+| `switching-perspectives` | Teaches Claude how to pick perspectives that create productive tension |
+| `thinking-sequentially` | Teaches Claude how to set up reasoning chains and interpret confidence |
+| `reasoning-chain` | Orchestrates multi-tool workflows for complex decisions |
 
-Supports styles: `analytical` (default), `challenging`, `conversational`, `quick`.
+The skills trigger automatically. You don't need to remember tool names.
 
-### Decision Matrix
+## Auth
 
-Use when you have multiple viable options with real trade-offs. Define criteria, weight them, score each option. Returns structured scoring you can act on and defend.
+All tools require a subscription. Sign up at [reasoning.services](https://reasoning.services).
 
-In high-stakes mode, the skill proactively adds criteria and options you may not have considered.
+On first tool use, Claude Code prompts for your API token (found at [reasoning.services/dashboard](https://reasoning.services/dashboard) under Credentials). The token is stored in your system keychain — never plaintext.
 
-### Context Switcher
+## Links
 
-Use when a decision affects multiple stakeholders, or when you need to surface what a single perspective can't see. Runs the same question from different roles simultaneously and synthesizes genuine tensions.
+[Documentation](https://reasoning.services) · [Issues](https://github.com/reasoning-services/marketplace/issues) · [Contact](mailto:contact@reasoning.services)
 
-### Sequential Thinking
-
-Use when a problem requires explicit step-by-step reasoning. Tracks confidence per step, maps dependencies between steps, detects and flags contradictions. Produces an auditable reasoning chain.
-
-## Support
-
-- Documentation: [reasoning.services](https://reasoning.services)
-- Issues: [github.com/reasoning-services/marketplace](https://github.com/reasoning-services/marketplace)
-- Contact: [contact@reasoning.services](mailto:contact@reasoning.services)
-
-## License
-
-MIT
+MIT License

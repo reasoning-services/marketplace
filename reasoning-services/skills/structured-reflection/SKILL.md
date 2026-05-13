@@ -1,13 +1,30 @@
 ---
-name: structured-reflection
-description: "Use when thinking feels muddy, circular, or stuck. Runs an isolated reflection session — won't pollute your main context. Invoke with: 'I'm stuck', 'talk this through', 'help me think out loud', 'something feels wrong but I can't name it', 'I keep coming back to this'."
+name: reflecting-structured
+description: Work through complex, muddy, or stuck thinking in an isolated reflection session. Use PROACTIVELY when the user seems stuck or is going in circles, when a problem is vague and needs articulation before it can be solved, when the user is conflating multiple problems, when emotional weight is making technical decisions harder, when someone needs to think out loud but the main conversation is too cluttered, or when the user says they're overwhelmed. Triggers on "I'm stuck", "I can't figure out", "I keep going back and forth", "let me think about this", "this is confusing", "I don't know where to start", "help me think through", "I'm overthinking this", "something feels off but I can't name it", "I need to untangle", "my head is spinning", "rubber duck this", "talk this through with me". Do NOT use when the user has a clear question with a clear answer — just answer it. When the user signals depth ("challenge me", "push back", "don't let me off easy", "go deep", "I keep coming back to this"), use style: challenging, reflect 8-12 times before concluding, call get_insights at the midpoint (turn 5-6) AND at conclusion, and push past the first moment of clarity. When the user signals speed ("quick take", "help me unstick", "rubber duck this", "just let me think"), use style: conversational or quick, reflect 3-4 times, then conclude. Default (no signal): style: analytical, 5-7 reflect calls, conclude when genuine clarity emerges.
 ---
 
-# Structured Reflection
+# Structured Reflection — Isolated Thinking Sessions
 
-Runs an isolated reflection session on a problem. The session state is completely separate from your main conversation — it cannot see this context and will not be contaminated by it.
+Runs in an isolated MCP session via `structured-reflection` server. The session state is completely separate from your main conversation — it cannot see this context and will not be contaminated by it.
 
-## Input Framing
+## When This Tool Shines
+
+Structured reflection is for problems where **the problem itself is unclear**. If you can already name the problem precisely, you probably need a different tool. This one is for:
+
+- "I know something is wrong with this architecture but I can't name what"
+- "I keep redesigning this and nothing feels right"
+- "There are three things tangled together and I need to separate them"
+- The user has been talking for 5+ messages and hasn't landed on anything concrete
+
+## Before Invoking
+
+### Frame the Opening, Not the Solution
+
+Start the reflection session with the *confusion*, not a hypothesis:
+
+**Good:** "I'm designing an auth system and I keep going back and forth between JWT and sessions. I think the real confusion is that I don't know what my actual threat model is."
+
+**Bad:** "Should I use JWT or sessions?" (That's a decision-matrix problem, not a reflection problem.)
 
 A good reflection prompt:
 - States the situation, not just the question: "I'm choosing between X and Y. I'm leaning toward X but something feels off."
@@ -19,49 +36,71 @@ A poor reflection prompt:
 - Single words or single phrases — the session needs enough context to work with
 - "What should I do?" without any stated situation — this is a decision question, not a reflection question
 
+### Choose the Right Style
+
+- **Conversational** (default): Exploratory, follow the thread
+- **Analytical**: Structured decomposition, good for technical tangles
+- **Challenging**: Pushes back on assumptions, good when the user needs to be unstuck from a position
+- **Supportive**: Gentler framing, probes without pressure — still asks hard questions
+- **Quick**: Fast synthesis, good when time-constrained
+
+## During the Session
+
+The tool adapts over the course of a session:
+
+- **Early turns (1-5):** Exploratory. Wide search. Follow the user's threads. The stated problem may not be the actual problem — surface-level articulation often describes symptoms.
+- **Mid turns (6-11):** Focused. Synthesize themes, name patterns, connect threads. Hidden premises surface. What is being taken for granted?
+- **Late turns (12+):** Convergent. Drive toward key insight, name takeaways, suggest next action. What has changed in how the problem is understood?
+
+If the session feels like it's going in circles after 8-10 turns, it's time to synthesize and close, not keep exploring.
+
 ## Tool Invocation
 
-Call the `reflect` tool with your content and a chosen style:
+Call `start_reflection` with your content and a chosen style.
 
-- `analytical` — examines the situation systematically, identifies patterns and gaps in reasoning
-- `challenging` — actively pushes back, surfaces hidden assumptions, does not accept the framing at face value
-- `conversational` — collaborative tone, helps externalize thinking without confrontation
-- `quick` — brief, high-signal responses that surface the one or two most important observations
-
-Run multiple turns. Each `reflect` call builds on prior session state. The session becomes more useful as it accumulates context.
+Run multiple turns using `reflect`. Each call builds on prior session state. The session becomes more useful as it accumulates context.
 
 Call `get_insights` to retrieve synthesized takeaways. Don't call it after the first turn — wait until the session has developed substance.
 
-## Output Interpretation
+## Intensity Adaptation
 
-The tool returns:
-- **Reflection content**: the session's response to your input, built on the accumulated session state
-- **Insights** (on `get_insights`): structured takeaways distilled from the full session arc
+This tool adapts session depth based on your framing:
 
-Insights are synthesized from the complete session, not just the last turn. If insights feel shallow, the session needs more turns before synthesis is meaningful.
+**Deep mode** (triggered by: "challenge me", "push back", "go deep", "don't let me off easy"):
+- Style: challenging — actively pushes back on assumptions
+- 8-12 reflection turns before concluding
+- Midpoint insight extraction at turn 5-6 to reframe the second half
+- Push past first clarity — the obvious answer is often a defense against the real one
 
-**On scores or confidence levels**: if the tool returns them, relative ordering is the signal. Absolute values are less reliable. If everything clusters at the same level, the inputs are not differentiating enough.
+**Quick mode** (triggered by: "quick take", "help me unstick", "rubber duck this"):
+- Style: conversational or quick
+- 3-4 reflection turns, then conclude
+- Optimize for the single most useful reframe, not comprehensive exploration
+
+**Default** (no explicit signal): style: analytical, 5-7 turns, conclude when genuine new insight stops emerging.
+
+## Interpreting Results
+
+The output is a thinking partner's contribution, not an answer. When bringing results back:
+
+- **Name the clarity that emerged.** "The reflection surfaced that your actual problem isn't auth mechanism — it's that you haven't defined your trust boundaries."
+- **Don't over-quote the session.** Synthesize in your own words. The user doesn't need the full transcript.
+- **Suggest the next tool.** Reflection often reveals that the real problem is suitable for another tool: a decision (matrix), a multi-stakeholder concern (context-switcher), or a step-by-step breakdown (sequential-thinking).
+- **On scores or confidence levels**: if the tool returns them, relative ordering is the signal. Absolute values are less reliable.
 
 ## Anti-Patterns
 
-**Don't use for decisions between concrete options.** If you have a defined option set with real trade-offs, that's decision-matrix territory.
+- **Don't use for decisions between concrete options.** If you have a defined option set with real trade-offs, that's decision-matrix territory.
+- **Don't use for stakeholder or perspective analysis.** That's context-switcher.
+- **Don't use reflection as a substitute for missing information.** Reflection surfaces what is already known or believed — it cannot supply facts that aren't there.
+- **Don't call get_insights immediately.** A 1-2 turn session has not developed enough material for synthesis to be useful.
 
-**Don't use for stakeholder or perspective analysis.** That's context-switcher.
+## Chaining
 
-**Don't use reflection as a substitute for missing information.** Reflection surfaces what is already known or believed — it cannot supply facts that aren't there.
+Structured Reflection is the natural FIRST step:
 
-**Don't call get_insights immediately.** A 1–2 turn session has not developed enough material for synthesis to be useful.
-
-## Intensity Adaptation
-
-Adjust style and turn count based on what the user signals:
-
-| Signal | Style | Turns | get_insights |
-|--------|-------|-------|--------------|
-| "challenge me", "push back", "go deep", "don't let me off easy" | `challenging` | 8–12 | Midpoint (turns 5–6) + conclusion |
-| "quick take", "rubber duck", "help me unstick", "just let me think" | `conversational` or `quick` | 3–4 | Conclusion only |
-| No signal | `analytical` | 5–7 | Conclusion only |
-
-For deep sessions in challenging mode: the midpoint get_insights call serves as a redirect — surface what the session has established so far, then use the remaining turns to push into what hasn't been resolved yet.
+1. **`structured-reflection`** → articulate the actual problem
+2. `context-switcher` → explore it from multiple angles
+3. `decision-matrix` → score concrete options that emerged
 
 See `references/DEPTH-STAGES.md` for stage definitions and transition signals.

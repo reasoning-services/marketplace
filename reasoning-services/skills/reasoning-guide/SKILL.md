@@ -1,45 +1,37 @@
 ---
 name: reasoning-guide
-description: "Routes to the correct reasoning tool when the right cognitive approach is unclear. Proactively invoke when the problem maps to a specific tool. Invoke with: 'help me think through this', 'which reasoning tool', 'how should I approach this', 'help me work through', 'I need clarity on'."
+description: Select and orchestrate structured reasoning tools. Use PROACTIVELY when the user faces a complex decision, needs to think through a problem systematically, is comparing multiple options, wants different perspectives on an issue, or is stuck and needs to articulate their thinking. Also triggers on "think this through", "help me decide", "what should I do about", "analyze this", "weigh the options", "consider the trade-offs", "I'm stuck on", "let me think about", "evaluate these choices", "get different viewpoints", "step by step", "break this down". Do NOT wait for the user to explicitly mention reasoning tools — if the problem would benefit from structured reasoning, suggest the right tool.
 ---
 
 # Reasoning Tool Selection
 
-These tools run reasoning in isolated sessions — separate from your main conversation context. Isolation prevents self-reinforcing patterns and keeps thousands of tokens of internal reasoning out of the user's working context.
+These tools run reasoning in **isolated MCP sessions** — separate from your main conversation context. This prevents self-reinforcing patterns and keeps your main thread clean.
 
 ## Decision Tree
 
-### structured-reflection
-- Thinking feels muddy, circular, or stuck
-- The user can't articulate why something feels wrong
-- A problem needs to be voiced to be understood
-- Assumptions need surfacing or challenging
+Ask yourself these questions in order. Take the FIRST match.
 
-### decision-matrix
-- Multiple viable options with real trade-offs exist
-- Criteria can be weighted and applied consistently across options
-- A defensible, structured comparison is needed
-- The decision needs to be explained or defended to others
+**Is the user comparing concrete options with real trade-offs?**
+→ Use `decision-matrix`. See [decision-matrix skill](../decision-matrix/SKILL.md) for input framing.
 
-### context-switcher
-- A decision affects multiple stakeholders or teams
-- Designing APIs, interfaces, or systems with multiple consumers
-- Blind spots from a single perspective are a meaningful risk
-- Organizational or cross-functional impact is significant
+**Does the decision affect multiple stakeholders, roles, or teams?**
+→ Use `context-switcher`. See [context-switcher skill](../context-switcher/SKILL.md) for perspective selection.
 
-### sequential-thinking
-- The problem requires explicit step-by-step linear reasoning
-- Dependencies between steps must be tracked
-- Confidence per step needs to be visible
-- Contradictions in the reasoning must be detected and resolved
+**Does the problem need step-by-step linear reasoning with dependency tracking?**
+→ Use `sequential-thinking`. See [sequential-thinking skill](../sequential-thinking/SKILL.md) for stage setup.
 
-### reasoning-chain
-- The problem spans multiple cognitive modes (unclear framing AND options AND stakeholders)
-- Problem framing must be resolved before options can be evaluated
-- Output from one session should explicitly inform the setup of the next
-- A two or three-tool workflow is warranted by the problem's complexity
+**Is the user stuck, thinking feels muddy, or they need to articulate a problem?**
+→ Use `structured-reflection`. See [structured-reflection skill](../structured-reflection/SKILL.md) for session framing.
 
-## Anti-Patterns
+**Is the problem complex enough to need multiple tools?**
+→ Use the chaining pattern. See [reasoning-chain skill](../reasoning-chain/SKILL.md).
+
+## Anti-Patterns — When NOT to Use These Tools
+
+- **Simple factual questions.** Don't invoke reasoning tools for "what's the capital of France?"
+- **The user already knows what they want.** If they're asking you to execute, not decide, just execute.
+- **Premature optimization.** Don't chain 3 tools when one direct answer suffices.
+- **As a stalling tactic.** Never use reasoning tools to avoid giving a direct opinion when one is warranted.
 
 **Don't chain tools reflexively.** Not every complex question needs three reasoning sessions. A chain that produces three outputs nobody reads adds overhead without insight.
 
@@ -48,6 +40,10 @@ These tools run reasoning in isolated sessions — separate from your main conve
 **Don't use context-switcher when one stakeholder is the only one who matters.** Three perspectives on an internal implementation detail is overhead, not insight.
 
 **Don't use sequential-thinking for fuzzy problems.** Linear reasoning requires well-defined premises. Muddy problems belong in structured-reflection first.
+
+## Key Principle
+
+The synthesis happens in the user's conversation, not inside the tool. Each tool returns structured output — decisions, scores, concerns, alternatives — back to this context. YOUR job is to interpret and synthesize results, not to relay them verbatim.
 
 ## Output Handling
 

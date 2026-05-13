@@ -2,9 +2,11 @@
 
 Reference for managing session progression and knowing when to call `get_insights`.
 
+Loaded into context only when the structured-reflection skill needs depth guidance.
+
 ## Stage Definitions
 
-### Stage 1: Surface Articulation (turns 1–2)
+### Stage 1: Surface Articulation (turns 1-2)
 
 The user states the problem. The session reflects it back with modest reframing.
 
@@ -17,7 +19,7 @@ The user states the problem. The session reflects it back with modest reframing.
 
 ---
 
-### Stage 2: Assumption Excavation (turns 3–5)
+### Stage 2: Assumption Excavation (turns 3-5)
 
 The session surfaces hidden premises. What is being taken for granted? What would have to be true for this framing to hold?
 
@@ -30,7 +32,7 @@ The session surfaces hidden premises. What is being taken for granted? What woul
 
 ---
 
-### Stage 3: Consequence Mapping (turns 6–8)
+### Stage 3: Consequence Mapping (turns 6-8)
 
 Work through what follows from the assumption examination. If the key assumption doesn't hold, what does?
 
@@ -39,11 +41,11 @@ Work through what follows from the assumption examination. If the key assumption
 - Forced acknowledgment of trade-offs the user was avoiding
 - In `analytical` mode, patterns across prior turns become synthesizable
 
-**Call `get_insights` here** for deep sessions — target turns 5–6. The session has accumulated enough material for meaningful synthesis. Use the midpoint insights to redirect the remaining turns toward what hasn't been resolved yet.
+**Call `get_insights` here** for deep sessions — target turns 5-6. The session has accumulated enough material for meaningful synthesis. Use the midpoint insights to redirect the remaining turns toward what hasn't been resolved yet.
 
 ---
 
-### Stage 4: Synthesis (turns 9–12, deep mode only)
+### Stage 4: Synthesis (turns 9-12, deep mode only)
 
 Consolidation. What has changed in how the problem is understood? What is now clearer, and what remains genuinely uncertain?
 
@@ -60,12 +62,25 @@ Consolidation. What has changed in how the problem is understood? What is now cl
 
 | Signal | Meaning |
 |--------|---------|
-| "I hadn't thought of it that way" | Stage 1 → 2 transition |
+| "I hadn't thought of it that way" | Stage 1 to 2 transition |
 | "I've been assuming..." | Stage 2 working correctly |
-| "If that's wrong, then..." | Stage 2 → 3 transition |
+| "If that's wrong, then..." | Stage 2 to 3 transition |
 | "So the real question is actually..." | Stage 3 synthesis emerging |
 | "I think I know what I need to do" | Resolution — call `get_insights` |
 | "I keep coming back to the same thing" | Session may need `challenging` mode |
+
+## Signs the Session Should End Early
+
+- User reached clarity before turn 12 — synthesize and close
+- User is producing one-word responses — engagement dropped
+- The same insight has been restated 3+ times — nothing new is emerging
+- The problem turned out to be simple — close and suggest a direct answer instead
+
+## Signs the Session Should Go Longer
+
+- New threads keep emerging with genuine complexity
+- User explicitly says "I want to keep exploring"
+- Each turn is producing genuinely new insight, not restating
 
 ---
 
@@ -88,8 +103,8 @@ Do not end when:
 
 | Mode | Turn count | When to call |
 |------|-----------|--------------|
-| `quick` / `conversational` | 3–4 | At conclusion only |
-| `analytical` (default) | 5–7 | At conclusion only |
-| `challenging` (deep) | 8–12 | Midpoint (turns 5–6) + conclusion |
+| `quick` / `conversational` | 3-4 | At conclusion only |
+| `analytical` (default) | 5-7 | At conclusion only |
+| `challenging` (deep) | 8-12 | Midpoint (turns 5-6) + conclusion |
 
 The midpoint call in challenging mode surfaces what's been established so far and explicitly redirects the remaining turns toward unresolved territory.

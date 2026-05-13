@@ -2,6 +2,8 @@
 
 Reference for selecting perspectives that produce productive tension.
 
+Loaded when the context-switcher skill needs perspective selection guidance.
+
 ## Core Selection Principle
 
 A set of perspectives is well-chosen when:
@@ -12,9 +14,7 @@ A set of perspectives is well-chosen when:
 
 Perspectives produce theater when they're chosen for coverage rather than tension.
 
----
-
-## Combinations by Decision Domain
+## High-Value Perspective Combinations by Domain
 
 ### Product Decisions
 
@@ -27,8 +27,6 @@ Perspectives produce theater when they're chosen for coverage rather than tensio
 **Deep (add 2 more):**
 - Security — what attack surface does this create, and who might misuse it?
 - Compliance — are there regulatory or legal constraints that bound the options?
-
-**Why these work:** Each perspective has genuine stake and genuine blind spots. UX wants ease; Engineering wants correctness; Business wants return; Ops wants stability. The tensions between them are structural, not forced.
 
 ---
 
@@ -43,8 +41,6 @@ Perspectives produce theater when they're chosen for coverage rather than tensio
 **Deep (add 1):**
 - Performance at Scale — what degrades first under 10x load? What is the worst-case failure mode?
 
-**Why these work:** Developers and infrastructure teams conflict on coupling and abstraction layers. Security and velocity are in tension on almost every design decision. Future Maintainer is systematically underweighted — include them explicitly.
-
 ---
 
 ### API or Interface Design
@@ -54,8 +50,6 @@ Perspectives produce theater when they're chosen for coverage rather than tensio
 - Secondary consumer — the next team or system to integrate; cares about discoverability and stability
 - API author — the team maintaining the contract long-term; cares about simplicity, stability, and avoiding breaking changes
 - External integrator — if third-party integrations are possible; cares about documentation quality and error clarity
-
-**Why these work:** Consumer and author interests conflict structurally. Consumers want maximum expressiveness; authors want minimal surface area. This tension is the core of every API design decision.
 
 ---
 
@@ -71,8 +65,6 @@ Perspectives produce theater when they're chosen for coverage rather than tensio
 - Skeptic — the person most likely to resist this change; what is their actual objection?
 - Late adopter — who comes last, and what do they need that early adopters don't?
 
-**Why these work:** Change initiatives fail because skeptics and late adopters are not consulted. Including them explicitly surfaces the friction points before implementation rather than after.
-
 ---
 
 ### Infrastructure and Cloud Platform Decisions
@@ -87,6 +79,16 @@ Perspectives produce theater when they're chosen for coverage rather than tensio
 - Vendor lock-in — what is the migration cost if this vendor relationship ends in 3 years?
 
 ---
+
+## Perspective Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Instead |
+|-------------|-------------|---------|
+| "Optimistic perspective" | Not a role, produces cheerleading | Use a specific advocate role |
+| "Devil's advocate" | Too generic, no domain grounding | Name the specific concern domain |
+| "Customer perspective" | Which customer? Too broad | Segment: enterprise buyer, end user, admin |
+| "Technical perspective" | Every engineer thinks differently | Specify: backend, frontend, SRE, DBA |
+| 6+ perspectives | Diminishing returns, diluted output | Cap at 4-5, pick for tension |
 
 ## Perspective Naming
 

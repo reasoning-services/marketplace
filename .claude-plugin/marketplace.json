@@ -1,8 +1,8 @@
 {
   "name": "reasoning-services-marketplace",
   "metadata": {
-    "description": "Structured reasoning tools for AI workflows — isolated cognitive sessions that don't pollute your context or reinforce your biases",
-    "version": "2.0.2"
+    "description": "4 reasoning engines + 6 skills for structured thinking. Isolated MCP sessions that don't pollute your context or reinforce your biases.",
+    "version": "2.1.0"
   },
   "owner": {
     "name": "reasoning-services",
@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "reasoning-services",
-      "description": "4 reasoning engines + 6 skills for structured thinking: Structured Reflection, Decision Matrix, Context Switcher, Sequential Thinking, Reasoning Chain orchestration, and a routing guide. Isolated cognitive sessions with persistent state, structured output, and intensity steering.",
+      "description": "4 reasoning engines + 6 skills for structured thinking. Isolated MCP sessions that don't pollute context or reinforce biases. Decision matrices, multi-perspective analysis, step-by-step logic, and reflection sessions — with auto-triggering skills that teach Claude when and how to use each tool.",
       "source": "./reasoning-services",
       "author": {
         "name": "reasoning-services",

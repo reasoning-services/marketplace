@@ -2,11 +2,72 @@
 
 Reference for multi-tool chaining patterns, explicit handoff mechanics, and adaptation decision trees.
 
+Loaded when the reasoning-chain skill needs detailed orchestration guidance.
+
+## Output Threading
+
+The key to effective chaining is threading structured output forward. Each tool's output becomes the next tool's input context.
+
+### What to Extract Per Tool
+
+**From Structured Reflection:**
+- The restated problem (different from the initial framing — this is the threading input for the next stage)
+- Named assumptions (these become criteria or constraints in later stages)
+- The concern the user was circling around but couldn't articulate (often becomes the highest-weight criterion)
+
+**From Context Switcher:**
+- Perspective concerns with highest cross-cutting relevance (affect multiple stakeholders)
+- Genuine tensions between perspectives (the decision structure lives here)
+- Stakeholders or concerns not in the original framing (potential new options or constraints)
+
+**From Sequential Thinking:**
+- Logical ruling-outs (paths with contradictions or confidence below threshold — these don't enter the matrix)
+- Implicit dependencies (step A must be true for option B to be viable)
+- Confidence floor of the chain (sets the ceiling for how confident the downstream decision can be)
+
+### Threading Templates
+
+**Reflection -> Context Switcher:**
+Pass: The clarified problem statement and named assumptions.
+Don't pass: The full transcript of the reflection session.
+Frame as: "Analyze [clarified problem] from the following perspectives, paying attention to [named assumptions]."
+
+**Context Switcher -> Decision Matrix:**
+Pass: Points of tension between perspectives as weighted criteria. Options that emerged or were refined.
+Don't pass: Full perspective analyses verbatim.
+Frame as: "Evaluate [options] against these criteria: [tensions as criteria with weights derived from how many perspectives flagged each]."
+
+**Context Switcher -> Sequential Thinking:**
+Pass: The most contentious finding that needs logical tracing.
+Don't pass: All findings — pick the one that benefits from linear reasoning.
+Frame as: "Trace the logic of [contentious finding]: starting from [premises], what follows step by step?"
+
+**Sequential Thinking -> Decision Matrix:**
+Pass: The conclusion and any forked hypotheses as options.
+Don't pass: Every intermediate step.
+Frame as: "The reasoning chain produced [N] viable conclusions. Score them against [criteria]."
+
+### The Handoff Statement
+
+When moving from one tool to the next, write an explicit handoff before invoking the next tool. This is not boilerplate — it is the mechanism that makes the chain coherent.
+
+**Templates:**
+
+> "Reflection identified [X] as the real concern — not [original framing]. Carrying [X] forward as the highest-weight criterion."
+
+> "Perspective [Y] raised [Z] as a concern that no other perspective acknowledged. Adding it as a criterion with weight [W] because [reason drawn from the analysis]."
+
+> "Sequential analysis shows [option A] leads to a contradiction at step [N] under [constraint C]. Removing [option A] from the matrix."
+
+> "Confidence in [conclusion from Stage 2] is 0.4 — too low to treat as a hard constraint. Including it as a medium-weight criterion rather than a filter."
+
+---
+
 ## Pattern Detail
 
-### Pattern: Reflect → Explore → Decide
+### Pattern: Reflect -> Explore -> Decide
 
-`Structured Reflection → Context Switcher → Decision Matrix`
+`Structured Reflection -> Context Switcher -> Decision Matrix`
 
 **Problem type:** Unclear framing + stakeholder complexity + evaluation needed
 
@@ -14,12 +75,12 @@ Reference for multi-tool chaining patterns, explicit handoff mechanics, and adap
 Stage 1: Structured Reflection
   Input:  The situation as currently understood — options, leaning, what feels off
   Target: Identify the real question, surface hidden assumptions, name genuine constraints
-  Output: Clarified problem statement, 1–2 named assumptions, the concern that was hard to articulate
+  Output: Clarified problem statement, 1-2 named assumptions, the concern that was hard to articulate
 
 Stage 2: Context Switcher
   Input:  Clarified problem statement from Stage 1 (not the original framing)
   Target: Surface blind spots from stakeholders identified as relevant in Stage 1
-  Output: 3–4 concrete concerns from distinct perspectives, genuine tensions between groups
+  Output: 3-4 concrete concerns from distinct perspectives, genuine tensions between groups
 
 Stage 3: Decision Matrix
   Input:  Options informed by Stage 1 + 2; criteria informed by Stage 2 concerns
@@ -35,9 +96,9 @@ Stage 3: Decision Matrix
 
 ---
 
-### Pattern: Explore → Deep-Dive → Decide
+### Pattern: Explore -> Deep-Dive -> Decide
 
-`Context Switcher → Sequential Thinking → Decision Matrix`
+`Context Switcher -> Sequential Thinking -> Decision Matrix`
 
 **Problem type:** Known options, complex stakeholder tensions, logical implications need tracing
 
@@ -45,7 +106,7 @@ Stage 3: Decision Matrix
 Stage 1: Context Switcher
   Input:  The decision + affected stakeholder groups
   Target: Surface competing priorities and genuine tensions between groups
-  Output: 2–3 genuine tensions; concerns that aren't visible from a single perspective
+  Output: 2-3 genuine tensions; concerns that aren't visible from a single perspective
 
 Stage 2: Sequential Thinking
   Input:  Each major tension from Stage 1 (run separate chains per tension if needed)
@@ -68,9 +129,9 @@ Stage 3: Decision Matrix
 
 ---
 
-### Pattern: Reflect → Decide
+### Pattern: Reflect -> Decide
 
-`Structured Reflection → Decision Matrix`
+`Structured Reflection -> Decision Matrix`
 
 **Problem type:** Options are clear; priorities are not
 
@@ -94,41 +155,6 @@ Stage 2: Decision Matrix
 
 ---
 
-## Output Threading Mechanics
-
-### What to Extract Per Tool
-
-**From Structured Reflection:**
-- The restated problem (different from the initial framing — this is the threading input for the next stage)
-- Named assumptions (these become criteria or constraints in later stages)
-- The concern the user was circling around but couldn't articulate (often becomes the highest-weight criterion)
-
-**From Context Switcher:**
-- Perspective concerns with highest cross-cutting relevance (affect multiple stakeholders)
-- Genuine tensions between perspectives (the decision structure lives here)
-- Stakeholders or concerns not in the original framing (potential new options or constraints)
-
-**From Sequential Thinking:**
-- Logical ruling-outs (paths with contradictions or confidence below threshold — these don't enter the matrix)
-- Implicit dependencies (step A must be true for option B to be viable)
-- Confidence floor of the chain (sets the ceiling for how confident the downstream decision can be)
-
-### The Handoff Statement
-
-When moving from one tool to the next, write an explicit handoff before invoking the next tool. This is not boilerplate — it is the mechanism that makes the chain coherent.
-
-**Templates:**
-
-> "Reflection identified [X] as the real concern — not [original framing]. Carrying [X] forward as the highest-weight criterion."
-
-> "Perspective [Y] raised [Z] as a concern that no other perspective acknowledged. Adding it as a criterion with weight [W] because [reason drawn from the analysis]."
-
-> "Sequential analysis shows [option A] leads to a contradiction at step [N] under [constraint C]. Removing [option A] from the matrix."
-
-> "Confidence in [conclusion from Stage 2] is 0.4 — too low to treat as a hard constraint. Including it as a medium-weight criterion rather than a filter."
-
----
-
 ## Adaptation Decision Trees
 
 ### When to stop early
@@ -136,27 +162,37 @@ When moving from one tool to the next, write an explicit handoff before invoking
 ```
 After Stage 1 (Reflection):
   Did the session resolve the decision outright?
-    Yes → Stop. No further tools needed.
+    Yes -> Stop. No further tools needed.
   Did the session reveal the options aren't yet defined?
-    Yes → Generate options before proceeding.
+    Yes -> Generate options before proceeding.
   Did the session reveal constraints that eliminate all but one option?
-    Yes → Skip to implementation planning.
+    Yes -> Skip to implementation planning.
 
 After Stage 2 (Explore or Deep-Dive):
   Did the analysis reveal the decision is already made by a hard constraint?
-    Yes → Stop. Document the constraint. Proceed to implementation.
+    Yes -> Stop. Document the constraint. Proceed to implementation.
   Did the analysis surface a new option not in the original set?
-    Yes → Add it to the matrix before scoring.
+    Yes -> Add it to the matrix before scoring.
   Did Stage 2 invalidate a Stage 1 assumption?
-    Yes → Revise Stage 1 output before proceeding to Stage 3.
+    Yes -> Revise Stage 1 output before proceeding to Stage 3.
 ```
+
+### Adaptation Triggers During a Chain
+
+| Signal | Adaptation |
+|--------|-----------|
+| Reflection resolves the problem directly | Stop. Don't chain further. |
+| All perspectives agree | Skip to decision-matrix or just decide. No tension = no value in more exploration. |
+| One perspective dominates | The matrix will be lopsided. Consider whether the dominant concern is a blocker or just loud. |
+| Sequential chain contradicts a premise | Go back. Revise the premise before continuing forward. |
+| User disengages ("just pick one") | Summarize what you have and make a recommendation. Don't force more tools. |
 
 ### When to extend the chain
 
 A chain can be extended beyond three tools when warranted. Common extensions:
 
-- After Reflect → Decide, if the matrix produces a result that re-opens the problem framing → run a second Reflect focused on the specific tension the matrix surfaced
-- After Explore → Decide, if the matrix reveals a new stakeholder concern that wasn't in the original perspective set → run a second targeted Explore on that specific concern
+- After Reflect -> Decide, if the matrix produces a result that re-opens the problem framing — run a second Reflect focused on the specific tension the matrix surfaced
+- After Explore -> Decide, if the matrix reveals a new stakeholder concern that wasn't in the original perspective set — run a second targeted Explore on that specific concern
 
 **Limit:** Maximum useful chain length is four tools. Beyond that, the outputs become too diffuse to thread coherently.
 
@@ -168,6 +204,6 @@ A chain can be extended beyond three tools when warranted. Common extensions:
 
 **Using chaining to avoid deciding.** A chain that always produces "it depends" or "more information needed" is not working — it's deferring. At least one stage should produce a constraint, ruling-out, or priority clarification that narrows the space.
 
-**Mechanical three-tool chains.** Running Reflect → Explore → Decide because it's "the pattern" without evaluating whether each stage is actually needed. Two well-threaded tools are better than three loosely connected ones.
+**Mechanical three-tool chains.** Running Reflect -> Explore -> Decide because it's "the pattern" without evaluating whether each stage is actually needed. Two well-threaded tools are better than three loosely connected ones.
 
 **Chaining before the problem is defined.** Run Stage 1 of whichever tool is most appropriate for where the user is. Don't plan a three-tool chain before understanding what the actual problem is.

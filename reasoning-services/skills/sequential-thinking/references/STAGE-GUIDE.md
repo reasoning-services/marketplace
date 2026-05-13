@@ -2,6 +2,8 @@
 
 Reference for stage definitions, confidence calibration, and contradiction handling.
 
+Loaded when the sequential-thinking skill needs stage guidance.
+
 ## Stage Definitions
 
 ### Stage 1: Problem Definition
@@ -81,18 +83,26 @@ State the answer derived from the chain. The conclusion must be explicitly trace
 
 ---
 
-## Confidence Calibration
+## Stage Transitions
 
-| Level | Meaning |
-|-------|---------|
-| 0.9–1.0 | Verified or definitionally true |
-| 0.7–0.9 | Strong evidence, minor uncertainty |
-| 0.5–0.7 | Reasonable inference, meaningful uncertainty |
-| 0.3–0.5 | Working assumption, significant uncertainty |
-| 0.1–0.3 | Weak foundation, proceed cautiously |
+Not every chain needs all 5 stages. Common patterns:
+
+**Quick debugging (3-5 steps):** Problem Definition -> Analysis -> Conclusion
+**Research-heavy (6-8 steps):** Problem Definition -> Research -> Research -> Analysis -> Synthesis -> Conclusion
+**Proof chain (4-6 steps):** Problem Definition -> Analysis -> Analysis -> Analysis -> Conclusion
+
+## Confidence Tracking
+
+| Confidence | Meaning |
+|-----------|---------|
+| 0.9-1.0 | Step follows necessarily from premises |
+| 0.7-0.9 | Step is well-supported but has assumptions |
+| 0.5-0.7 | Step is plausible but could go either way |
+| 0.3-0.5 | Step is speculative, needs validation |
+| 0.1-0.3 | Step is a guess — flag explicitly |
 | < 0.1 | Essentially unknown; flagging for completeness only |
 
-**Propagation rule:** The confidence of a derived step cannot exceed the confidence of its lowest-confidence direct dependency.
+**Propagation rule:** The confidence of a derived step cannot exceed the confidence of its lowest-confidence direct dependency. A chain's overall confidence is bounded by its weakest step. If step 3 is 0.4, the conclusion can't be 0.9 no matter how solid later steps are.
 
 **Common miscalibration:** All steps at 0.8+ confidence. This indicates either a trivial problem or suppressed uncertainty. To diagnose: identify the two or three steps most likely to be wrong and calibrate those carefully. The rest will follow.
 
@@ -123,3 +133,10 @@ State the answer derived from the chain. The conclusion must be explicitly trace
 A chain with unresolved contradictions produces a conclusion that is internally inconsistent. This must be stated explicitly: "This conclusion holds under [assumption X], but Step N establishes [Y], which is in tension with X. If Y is correct, the conclusion changes to [Z]."
 
 Never deliver an internally inconsistent conclusion without flagging the inconsistency.
+
+### What to Do When a Contradiction Is Flagged
+
+1. Name the two steps that conflict
+2. Identify whether the issue is a wrong premise or flawed logic
+3. Either revise the earlier step or fork the chain into two hypotheses
+4. Do NOT paper over contradictions — they are the most valuable signal
