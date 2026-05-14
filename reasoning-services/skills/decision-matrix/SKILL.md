@@ -1,6 +1,17 @@
 ---
 name: deciding-with-matrix
-description: Systematic option comparison using weighted criteria and structured scoring. Use PROACTIVELY when the user is choosing between 2-6 concrete options with meaningful trade-offs, comparing technologies or architectures, evaluating vendors or tools, making hiring or resource allocation decisions, or any choice where multiple factors matter at different weights. Triggers on "which should I pick", "compare these options", "what are the trade-offs", "evaluate these", "pros and cons of", "weigh these against each other", "which database should I use", "should I go with A or B", "help me choose", "rank these options", "what's the best option for". Do NOT use for subjective preferences with no criteria, or when the user has already decided and needs validation. When the user signals depth ("thorough comparison", "I need to defend this decision", "high stakes", "comprehensive", "what am I not considering"), use 6-8 criteria with weights deliberately spread across the full 1-5 range, proactively add 2-3 criteria the user didn't consider using add_criterion_tool, and proactively add 1-2 non-obvious alternative options using add_option_tool. When the user signals speed ("just help me pick", "quick comparison", "gut check"), use 3-4 criteria, accept the user's options as-is without adding more, and use a narrower weight range (2-4). Default (no signal): 4-5 criteria, weights spread 2-5, add criteria only if an obvious gap exists.
+description: >-
+  Systematic option comparison using weighted criteria and structured scoring. Use
+  PROACTIVELY when the user is choosing between 2-6 concrete options with meaningful
+  trade-offs, comparing technologies or architectures, evaluating vendors or tools,
+  making hiring or resource allocation decisions, or any choice where multiple
+  factors matter at different weights. Triggers on phrases like "which should I
+  pick", "compare these options", "what are the trade-offs", "evaluate these", "pros
+  and cons of", "weigh these against each other", "which database should I use",
+  "should I go with A or B", "help me choose", "rank these options", "what's the
+  best option for". Do NOT use for subjective preferences with no criteria, or when
+  the user has already decided and needs validation. See the skill body for deep,
+  quick, and default invocation modes.
 ---
 
 # Decision Matrix — Structured Option Evaluation

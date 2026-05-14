@@ -1,6 +1,18 @@
 ---
 name: thinking-sequentially
-description: Step-by-step linear reasoning with confidence tracking, dependency mapping, and contradiction detection. Use PROACTIVELY when a problem requires explicit logical steps where each depends on previous conclusions, when building a proof or argument chain, when debugging complex issues systematically, when planning a multi-step process where order matters, when the user needs to show their reasoning (auditable thinking), or when you detect a logical gap in the current reasoning. Triggers on "step by step", "walk me through", "break this down logically", "what's the reasoning chain", "prove that", "trace the logic", "work through this systematically", "debug this step by step", "what follows from", "if A then B", "build the argument for", "map out the dependencies", "what order should I". Do NOT use for open-ended exploration (use structured-reflection) or parallel concerns (use context-switcher). When the user signals depth ("deep dive", "thorough", "really think about this", "ultrathink", "go deep", "prove this", "build the full argument", "I need to show my reasoning"), set total_thoughts to 10-15, use all 5 stages (Problem Definition, Research, Analysis, Synthesis, Conclusion), challenge at least 2 assumptions per thought, and track confidence per-step with explicit flags when confidence drops below 0.6. When the user signals speed ("quick", "fast", "just trace this", "high-level", "sketch this out", "gut check"), set total_thoughts to 3-4, use only Problem Definition, Analysis, Conclusion, and prioritize forward progress over exhaustive coverage. Default (no signal): 5-8 thoughts, use stages appropriate to the problem complexity, challenge assumptions when they surface naturally.
+description: >-
+  Step-by-step linear reasoning with confidence tracking, dependency mapping, and
+  contradiction detection. Use PROACTIVELY when a problem requires explicit logical
+  steps where each depends on previous conclusions, when building a proof or argument
+  chain, when debugging complex issues systematically, when planning a multi-step
+  process where order matters, when the user needs to show their reasoning, or when
+  you detect a logical gap in the current reasoning. Triggers on phrases like "step
+  by step", "walk me through", "break this down logically", "what's the reasoning
+  chain", "prove that", "trace the logic", "work through this systematically", "debug
+  this step by step", "what follows from", "build the argument for", "map out the
+  dependencies", "what order should I". Do NOT use for open-ended exploration (use
+  structured-reflection) or parallel concerns (use context-switcher). See the skill
+  body for deep, quick, and default invocation modes.
 ---
 
 # Sequential Thinking — Linear Reasoning with Tracking

@@ -1,6 +1,18 @@
 ---
 name: switching-perspectives
-description: Run parallel analysis from multiple stakeholder perspectives to surface blind spots and cross-cutting concerns. Use PROACTIVELY when a decision affects multiple teams or roles, when designing APIs or interfaces that multiple consumers will use, when the user seems locked into one viewpoint, when organizational buy-in matters, when there are competing priorities (speed vs quality, cost vs features), or when the user needs to anticipate objections. Triggers on "what am I missing", "different perspectives on", "how would X see this", "who would object to", "devil's advocate", "blind spots", "stakeholder analysis", "what would the security team think", "how does this look from", "consider all angles", "get other viewpoints", "what concerns would Y have". Do NOT use when the user needs a single deep analysis rather than breadth, or when there's genuinely only one stakeholder. When the user signals depth ("leave no stone unturned", "comprehensive review", "all angles", "find the blind spots", "I need buy-in"), use 5-7 perspectives with specific focus areas (not just role names), use analyze_from_perspectives_stream for richer output, proactively add 1-2 perspectives after initial analysis using add_perspective_tool if results reveal uncovered concerns, and frame synthesis around non-obvious cross-cutting concerns. When the user signals speed ("sanity check", "quick gut check", "sense check"), use 3 core perspectives (technical, user, business), use analyze_from_perspectives (non-streaming), and synthesize with focus on top concern only. Default (no signal): 4 perspectives, standard analysis, synthesize agreements and tensions.
+description: >-
+  Run parallel analysis from multiple stakeholder perspectives to surface blind spots
+  and cross-cutting concerns. Use PROACTIVELY when a decision affects multiple teams
+  or roles, when designing APIs or interfaces that multiple consumers will use, when
+  the user seems locked into one viewpoint, when organizational buy-in matters, when
+  there are competing priorities (speed vs quality, cost vs features), or when the
+  user needs to anticipate objections. Triggers on phrases like "what am I missing",
+  "different perspectives on", "how would X see this", "who would object to",
+  "devil's advocate", "blind spots", "stakeholder analysis", "what would the security
+  team think", "how does this look from", "consider all angles", "get other
+  viewpoints", "what concerns would Y have". Do NOT use when the user needs a single
+  deep analysis rather than breadth, or when there's genuinely only one stakeholder.
+  See the skill body for deep, quick, and default invocation modes.
 ---
 
 # Context Switcher — Multi-Perspective Analysis

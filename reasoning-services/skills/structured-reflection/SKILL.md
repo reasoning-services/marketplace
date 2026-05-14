@@ -1,6 +1,18 @@
 ---
 name: reflecting-structured
-description: Work through complex, muddy, or stuck thinking in an isolated reflection session. Use PROACTIVELY when the user seems stuck or is going in circles, when a problem is vague and needs articulation before it can be solved, when the user is conflating multiple problems, when emotional weight is making technical decisions harder, when someone needs to think out loud but the main conversation is too cluttered, or when the user says they're overwhelmed. Triggers on "I'm stuck", "I can't figure out", "I keep going back and forth", "let me think about this", "this is confusing", "I don't know where to start", "help me think through", "I'm overthinking this", "something feels off but I can't name it", "I need to untangle", "my head is spinning", "rubber duck this", "talk this through with me". Do NOT use when the user has a clear question with a clear answer — just answer it. When the user signals depth ("challenge me", "push back", "don't let me off easy", "go deep", "I keep coming back to this"), use style: challenging, reflect 8-12 times before concluding, call get_insights at the midpoint (turn 5-6) AND at conclusion, and push past the first moment of clarity. When the user signals speed ("quick take", "help me unstick", "rubber duck this", "just let me think"), use style: conversational or quick, reflect 3-4 times, then conclude. Default (no signal): style: analytical, 5-7 reflect calls, conclude when genuine clarity emerges.
+description: >-
+  Work through complex, muddy, or stuck thinking in an isolated reflection session.
+  Use PROACTIVELY when the user seems stuck or going in circles, when a problem is
+  vague and needs articulation, when the user is conflating multiple problems, when
+  emotional weight is making technical decisions harder, when someone needs to think
+  out loud but the main conversation is too cluttered, or when the user says they're
+  overwhelmed. Triggers on phrases like "I'm stuck", "I can't figure out", "I keep
+  going back and forth", "let me think about this", "this is confusing", "I don't
+  know where to start", "help me think through", "I'm overthinking this", "something
+  feels off but I can't name it", "I need to untangle", "my head is spinning",
+  "rubber duck this", "talk this through with me". Do NOT use when the user has a
+  clear question with a clear answer — just answer it. See the skill body for depth,
+  speed, and default invocation modes.
 ---
 
 # Structured Reflection — Isolated Thinking Sessions
