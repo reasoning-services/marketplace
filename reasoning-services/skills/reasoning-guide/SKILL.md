@@ -12,19 +12,19 @@ These tools run reasoning in **isolated MCP sessions** — separate from your ma
 Ask yourself these questions in order. Take the FIRST match.
 
 **Is the user comparing concrete options with real trade-offs?**
-→ Use `decision-matrix`. See [decision-matrix skill](../decision-matrix/SKILL.md) for input framing.
+→ Use `decision-matrix`. See [`decision-matrix` skill](../decision-matrix/SKILL.md) for input framing.
 
 **Does the decision affect multiple stakeholders, roles, or teams?**
-→ Use `context-switcher`. See [context-switcher skill](../context-switcher/SKILL.md) for perspective selection.
+→ Use `context-switcher`. See [`context-switcher` skill](../context-switcher/SKILL.md) for perspective selection.
 
 **Does the problem need step-by-step linear reasoning with dependency tracking?**
-→ Use `sequential-thinking`. See [sequential-thinking skill](../sequential-thinking/SKILL.md) for stage setup.
+→ Use `sequential-thinking`. See [`sequential-thinking` skill](../sequential-thinking/SKILL.md) for stage setup.
 
 **Is the user stuck, thinking feels muddy, or they need to articulate a problem?**
-→ Use `structured-reflection`. See [structured-reflection skill](../structured-reflection/SKILL.md) for session framing.
+→ Use `structured-reflection`. See [`structured-reflection` skill](../structured-reflection/SKILL.md) for session framing.
 
 **Is the problem complex enough to need multiple tools?**
-→ Use the chaining pattern. See [reasoning-chain skill](../reasoning-chain/SKILL.md).
+→ Use the chaining pattern. See [`reasoning-chain` skill](../reasoning-chain/SKILL.md).
 
 ## Anti-Patterns — When NOT to Use These Tools
 
