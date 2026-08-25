@@ -2,7 +2,7 @@
 
 Reference for interpreting scores, detecting calibration errors, and handling specific criterion types.
 
-Loaded into context only when the decision-matrix skill needs scoring guidance.
+Loaded into context only when the deciding-with-matrix skill needs scoring guidance.
 
 ## Score Semantics (1-5 Scale)
 

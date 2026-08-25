@@ -2,7 +2,7 @@
 
 Reference for stage definitions, confidence calibration, and contradiction handling.
 
-Loaded when the sequential-thinking skill needs stage guidance.
+Loaded when the thinking-sequentially skill needs stage guidance.
 
 ## Stage Definitions
 

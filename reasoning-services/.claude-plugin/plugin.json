@@ -1,9 +1,19 @@
 {
   "name": "reasoning-services",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "4 reasoning engines + 6 skills for structured thinking. Isolated MCP sessions that don't pollute context or reinforce biases. Decision matrices, multi-perspective analysis, step-by-step logic, and reflection sessions — with auto-triggering skills that teach Claude when and how to use each tool.",
-  "keywords": ["reasoning", "thinking", "decisions", "analysis", "reflection", "mcp", "cognitive", "bias", "perspectives", "matrix"],
-  "category": "productivity",
+  "keywords": [
+    "reasoning",
+    "thinking",
+    "decisions",
+    "analysis",
+    "reflection",
+    "mcp",
+    "cognitive",
+    "bias",
+    "perspectives",
+    "matrix"
+  ],
   "author": {
     "name": "reasoning-services",
     "email": "contact@reasoning.services"

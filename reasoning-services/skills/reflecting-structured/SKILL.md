@@ -1,18 +1,6 @@
 ---
 name: reflecting-structured
-description: >-
-  Work through complex, muddy, or stuck thinking in an isolated reflection session.
-  Use PROACTIVELY when the user seems stuck or going in circles, when a problem is
-  vague and needs articulation, when the user is conflating multiple problems, when
-  emotional weight is making technical decisions harder, when someone needs to think
-  out loud but the main conversation is too cluttered, or when the user says they're
-  overwhelmed. Triggers on phrases like "I'm stuck", "I can't figure out", "I keep
-  going back and forth", "let me think about this", "this is confusing", "I don't
-  know where to start", "help me think through", "I'm overthinking this", "something
-  feels off but I can't name it", "I need to untangle", "my head is spinning",
-  "rubber duck this", "talk this through with me". Do NOT use when the user has a
-  clear question with a clear answer — just answer it. See the skill body for depth,
-  speed, and default invocation modes.
+description: "Work through muddy, circular or stuck thinking in an isolated reflection session. Use when a problem needs articulation before it can be solved, or the main thread is too cluttered to think in."
 ---
 
 # Structured Reflection — Isolated Thinking Sessions
@@ -116,3 +104,13 @@ Structured Reflection is the natural FIRST step:
 3. `decision-matrix` → score concrete options that emerged
 
 See `references/DEPTH-STAGES.md` for stage definitions and transition signals.
+
+---
+
+## Trigger Reference
+
+Retained from the pre-2.2 frontmatter description, which exceeded the 200-character
+claude.ai limit. Kept here so the routing signal is not lost; `reasoning-guide` is the
+skill that acts on it.
+
+> Work through complex, muddy, or stuck thinking in an isolated reflection session. Use PROACTIVELY when the user seems stuck or going in circles, when a problem is vague and needs articulation, when the user is conflating multiple problems, when emotional weight is making technical decisions harder, when someone needs to think out loud but the main conversation is too cluttered, or when the user says they're overwhelmed. Triggers on phrases like "I'm stuck", "I can't figure out", "I keep going back and forth", "let me think about this", "this is confusing", "I don't know where to start", "help me think through", "I'm overthinking this", "something feels off but I can't name it", "I need to untangle", "my head is spinning", "rubber duck this", "talk this through with me". Do NOT use when the user has a clear question with a clear answer — just answer it. See the skill body for depth, speed, and default invocation modes.

@@ -1,17 +1,6 @@
 ---
 name: deciding-with-matrix
-description: >-
-  Systematic option comparison using weighted criteria and structured scoring. Use
-  PROACTIVELY when the user is choosing between 2-6 concrete options with meaningful
-  trade-offs, comparing technologies or architectures, evaluating vendors or tools,
-  making hiring or resource allocation decisions, or any choice where multiple
-  factors matter at different weights. Triggers on phrases like "which should I
-  pick", "compare these options", "what are the trade-offs", "evaluate these", "pros
-  and cons of", "weigh these against each other", "which database should I use",
-  "should I go with A or B", "help me choose", "rank these options", "what's the
-  best option for". Do NOT use for subjective preferences with no criteria, or when
-  the user has already decided and needs validation. See the skill body for deep,
-  quick, and default invocation modes.
+description: "Compare 2-6 concrete options against weighted criteria with structured scoring. Use when trade-offs are real and factors matter at different weights: technology, vendor, or resourcing choices."
 ---
 
 # Decision Matrix — Structured Option Evaluation
@@ -96,3 +85,13 @@ Decision Matrix works best AFTER upstream tools have clarified the problem:
 1. `structured-reflection` → articulate what you're actually deciding
 2. `context-switcher` → surface criteria you'd miss from one perspective
 3. **`decision-matrix`** → score options against those criteria
+
+---
+
+## Trigger Reference
+
+Retained from the pre-2.2 frontmatter description, which exceeded the 200-character
+claude.ai limit. Kept here so the routing signal is not lost; `reasoning-guide` is the
+skill that acts on it.
+
+> Systematic option comparison using weighted criteria and structured scoring. Use PROACTIVELY when the user is choosing between 2-6 concrete options with meaningful trade-offs, comparing technologies or architectures, evaluating vendors or tools, making hiring or resource allocation decisions, or any choice where multiple factors matter at different weights. Triggers on phrases like "which should I pick", "compare these options", "what are the trade-offs", "evaluate these", "pros and cons of", "weigh these against each other", "which database should I use", "should I go with A or B", "help me choose", "rank these options", "what's the best option for". Do NOT use for subjective preferences with no criteria, or when the user has already decided and needs validation. See the skill body for deep, quick, and default invocation modes.

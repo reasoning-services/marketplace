@@ -2,7 +2,7 @@
 
 Reference for managing session progression and knowing when to call `get_insights`.
 
-Loaded into context only when the structured-reflection skill needs depth guidance.
+Loaded into context only when the reflecting-structured skill needs depth guidance.
 
 ## Stage Definitions
 

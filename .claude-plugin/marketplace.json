@@ -2,7 +2,7 @@
   "name": "reasoning-services-marketplace",
   "metadata": {
     "description": "4 reasoning engines + 6 skills for structured thinking. Isolated MCP sessions that don't pollute your context or reinforce your biases.",
-    "version": "2.1.0"
+    "version": "2.2.0"
   },
   "owner": {
     "name": "reasoning-services",
@@ -19,7 +19,18 @@
       },
       "homepage": "https://reasoning.services",
       "category": "productivity",
-      "tags": ["reasoning", "thinking", "decisions", "analysis", "reflection", "mcp", "cognitive", "bias", "perspectives", "matrix"]
+      "tags": [
+        "reasoning",
+        "thinking",
+        "decisions",
+        "analysis",
+        "reflection",
+        "mcp",
+        "cognitive",
+        "bias",
+        "perspectives",
+        "matrix"
+      ]
     }
   ]
 }

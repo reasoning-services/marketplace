@@ -1,18 +1,6 @@
 ---
 name: switching-perspectives
-description: >-
-  Run parallel analysis from multiple stakeholder perspectives to surface blind spots
-  and cross-cutting concerns. Use PROACTIVELY when a decision affects multiple teams
-  or roles, when designing APIs or interfaces that multiple consumers will use, when
-  the user seems locked into one viewpoint, when organizational buy-in matters, when
-  there are competing priorities (speed vs quality, cost vs features), or when the
-  user needs to anticipate objections. Triggers on phrases like "what am I missing",
-  "different perspectives on", "how would X see this", "who would object to",
-  "devil's advocate", "blind spots", "stakeholder analysis", "what would the security
-  team think", "how does this look from", "consider all angles", "get other
-  viewpoints", "what concerns would Y have". Do NOT use when the user needs a single
-  deep analysis rather than breadth, or when there's genuinely only one stakeholder.
-  See the skill body for deep, quick, and default invocation modes.
+description: "Analyse one question from several stakeholder perspectives in parallel to surface blind spots. Use when a decision crosses teams, buy-in matters, or the user is locked into a single viewpoint."
 ---
 
 # Context Switcher — Multi-Perspective Analysis
@@ -102,3 +90,13 @@ Context Switcher is most powerful in the EXPLORE position:
 3. `decision-matrix` → use surfaced concerns as criteria for scoring
 
 See `references/PERSPECTIVES.md` for perspective combinations by domain.
+
+---
+
+## Trigger Reference
+
+Retained from the pre-2.2 frontmatter description, which exceeded the 200-character
+claude.ai limit. Kept here so the routing signal is not lost; `reasoning-guide` is the
+skill that acts on it.
+
+> Run parallel analysis from multiple stakeholder perspectives to surface blind spots and cross-cutting concerns. Use PROACTIVELY when a decision affects multiple teams or roles, when designing APIs or interfaces that multiple consumers will use, when the user seems locked into one viewpoint, when organizational buy-in matters, when there are competing priorities (speed vs quality, cost vs features), or when the user needs to anticipate objections. Triggers on phrases like "what am I missing", "different perspectives on", "how would X see this", "who would object to", "devil's advocate", "blind spots", "stakeholder analysis", "what would the security team think", "how does this look from", "consider all angles", "get other viewpoints", "what concerns would Y have". Do NOT use when the user needs a single deep analysis rather than breadth, or when there's genuinely only one stakeholder. See the skill body for deep, quick, and default invocation modes.

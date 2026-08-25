@@ -2,7 +2,7 @@
 
 Reference for selecting perspectives that produce productive tension.
 
-Loaded when the context-switcher skill needs perspective selection guidance.
+Loaded when the switching-perspectives skill needs perspective selection guidance.
 
 ## Core Selection Principle
 

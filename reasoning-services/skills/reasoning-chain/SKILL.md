@@ -1,6 +1,6 @@
 ---
 name: reasoning-chain
-description: Orchestrate multi-tool reasoning workflows by chaining structured reflection, context switching, decision matrix, and sequential thinking. Use when a problem is too complex for a single reasoning tool, when the user explicitly wants a thorough multi-angle analysis, when stakes are high enough to justify the investment (architecture decisions, strategic pivots, major technical bets), or when prior single-tool results were insufficient. Triggers on "analyze this thoroughly", "give me the full treatment", "I need a comprehensive analysis", "this is a big decision", "chain the reasoning tools", "go deep on this", "high-stakes decision", "bet-the-company", "I want multiple angles AND a structured comparison". Do NOT use for routine decisions — single tools are usually enough.
+description: "Orchestrate multi-tool reasoning when one tool is not enough. Use for high-stakes problems spanning unclear framing, real options, and stakeholder impact. Pattern: Reflect then Explore then Decide."
 ---
 
 # Reasoning Chain — Multi-Tool Orchestration
@@ -133,3 +133,13 @@ A chain plan is not fixed once started. Adaptation is expected.
 - **Don't start a chain without a plan.** Know which pattern you're using and why before invoking the first tool. Improvising the chain mid-session loses the coherence.
 
 See `references/CHAINING-PATTERNS.md` for detailed output threading examples and adaptation decision trees.
+
+---
+
+## Trigger Reference
+
+Retained from the pre-2.2 frontmatter description, which exceeded the 200-character
+claude.ai limit. Kept here so the routing signal is not lost; `reasoning-guide` is the
+skill that acts on it.
+
+> Orchestrate multi-tool reasoning workflows by chaining structured reflection, context switching, decision matrix, and sequential thinking. Use when a problem is too complex for a single reasoning tool, when the user explicitly wants a thorough multi-angle analysis, when stakes are high enough to justify the investment (architecture decisions, strategic pivots, major technical bets), or when prior single-tool results were insufficient. Triggers on "analyze this thoroughly", "give me the full treatment", "I need a comprehensive analysis", "this is a big decision", "chain the reasoning tools", "go deep on this", "high-stakes decision", "bet-the-company", "I want multiple angles AND a structured comparison". Do NOT use for routine decisions — single tools are usually enough.

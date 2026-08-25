@@ -1,7 +1,19 @@
+# Allowlist: everything is ignored unless explicitly re-included below.
+# NOTE: re-including a directory is not enough — `*` still matches its
+# contents, so each subtree needs its own `/**` re-include.
 *
 !/.gitignore
-!/.claude-plugin/
-!/reasoning-services
-!/README.md
 !/LICENSE
+!/README.md
 !/icon.svg
+!/.claude-plugin/
+!/.claude-plugin/**
+!/reasoning-services/
+!/reasoning-services/**
+
+# Never publish these, even under the re-includes above.
+CLAUDE.md
+.DS_Store
+*.local
+.env
+.env.*

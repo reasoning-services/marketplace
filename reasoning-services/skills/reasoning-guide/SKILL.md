@@ -1,6 +1,6 @@
 ---
 name: reasoning-guide
-description: Select and orchestrate structured reasoning tools. Use PROACTIVELY when the user faces a complex decision, needs to think through a problem systematically, is comparing multiple options, wants different perspectives on an issue, or is stuck and needs to articulate their thinking. Also triggers on "think this through", "help me decide", "what should I do about", "analyze this", "weigh the options", "consider the trade-offs", "I'm stuck on", "let me think about", "evaluate these choices", "get different viewpoints", "step by step", "break this down". Do NOT wait for the user to explicitly mention reasoning tools — if the problem would benefit from structured reasoning, suggest the right tool.
+description: "Route to the right structured reasoning tool when the approach is unclear. Use proactively for complex decisions, option comparisons, multi-stakeholder questions, or when the user is stuck."
 ---
 
 # Reasoning Tool Selection
@@ -12,16 +12,16 @@ These tools run reasoning in **isolated MCP sessions** — separate from your ma
 Ask yourself these questions in order. Take the FIRST match.
 
 **Is the user comparing concrete options with real trade-offs?**
-→ Use `decision-matrix`. See [`decision-matrix` skill](../decision-matrix/SKILL.md) for input framing.
+→ Use `decision-matrix`. See [`deciding-with-matrix` skill](../deciding-with-matrix/SKILL.md) for input framing.
 
 **Does the decision affect multiple stakeholders, roles, or teams?**
-→ Use `context-switcher`. See [`context-switcher` skill](../context-switcher/SKILL.md) for perspective selection.
+→ Use `context-switcher`. See [`switching-perspectives` skill](../switching-perspectives/SKILL.md) for perspective selection.
 
 **Does the problem need step-by-step linear reasoning with dependency tracking?**
-→ Use `sequential-thinking`. See [`sequential-thinking` skill](../sequential-thinking/SKILL.md) for stage setup.
+→ Use `sequential-thinking`. See [`thinking-sequentially` skill](../thinking-sequentially/SKILL.md) for stage setup.
 
 **Is the user stuck, thinking feels muddy, or they need to articulate a problem?**
-→ Use `structured-reflection`. See [`structured-reflection` skill](../structured-reflection/SKILL.md) for session framing.
+→ Use `structured-reflection`. See [`reflecting-structured` skill](../reflecting-structured/SKILL.md) for session framing.
 
 **Is the problem complex enough to need multiple tools?**
 → Use the chaining pattern. See [`reasoning-chain` skill](../reasoning-chain/SKILL.md).
@@ -48,3 +48,13 @@ The synthesis happens in the user's conversation, not inside the tool. Each tool
 ## Output Handling
 
 Each tool returns structured output — scores, insights, perspectives, reasoning chains. Route it back into the main conversation. Don't continue reasoning inside the tool past its purpose. Synthesis belongs in the user's head, not in a compounding loop.
+
+---
+
+## Trigger Reference
+
+Retained from the pre-2.2 frontmatter description, which exceeded the 200-character
+claude.ai limit. Kept here so the routing signal is not lost; `reasoning-guide` is the
+skill that acts on it.
+
+> Select and orchestrate structured reasoning tools. Use PROACTIVELY when the user faces a complex decision, needs to think through a problem systematically, is comparing multiple options, wants different perspectives on an issue, or is stuck and needs to articulate their thinking. Also triggers on "think this through", "help me decide", "what should I do about", "analyze this", "weigh the options", "consider the trade-offs", "I'm stuck on", "let me think about", "evaluate these choices", "get different viewpoints", "step by step", "break this down". Do NOT wait for the user to explicitly mention reasoning tools — if the problem would benefit from structured reasoning, suggest the right tool.

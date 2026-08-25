@@ -1,18 +1,6 @@
 ---
 name: thinking-sequentially
-description: >-
-  Step-by-step linear reasoning with confidence tracking, dependency mapping, and
-  contradiction detection. Use PROACTIVELY when a problem requires explicit logical
-  steps where each depends on previous conclusions, when building a proof or argument
-  chain, when debugging complex issues systematically, when planning a multi-step
-  process where order matters, when the user needs to show their reasoning, or when
-  you detect a logical gap in the current reasoning. Triggers on phrases like "step
-  by step", "walk me through", "break this down logically", "what's the reasoning
-  chain", "prove that", "trace the logic", "work through this systematically", "debug
-  this step by step", "what follows from", "build the argument for", "map out the
-  dependencies", "what order should I". Do NOT use for open-ended exploration (use
-  structured-reflection) or parallel concerns (use context-switcher). See the skill
-  body for deep, quick, and default invocation modes.
+description: "Step-by-step reasoning with confidence tracking and contradiction detection. Use when each step depends on the last: proofs, argument chains, systematic debugging, ordered planning."
 ---
 
 # Sequential Thinking — Linear Reasoning with Tracking
@@ -119,3 +107,13 @@ Sequential thinking works well as a DEEP DIVE after broader exploration:
 3. `decision-matrix` -> if the chain produced multiple viable conclusions, score them
 
 See `references/STAGE-GUIDE.md` for stage definitions, confidence calibration, and contradiction handling patterns.
+
+---
+
+## Trigger Reference
+
+Retained from the pre-2.2 frontmatter description, which exceeded the 200-character
+claude.ai limit. Kept here so the routing signal is not lost; `reasoning-guide` is the
+skill that acts on it.
+
+> Step-by-step linear reasoning with confidence tracking, dependency mapping, and contradiction detection. Use PROACTIVELY when a problem requires explicit logical steps where each depends on previous conclusions, when building a proof or argument chain, when debugging complex issues systematically, when planning a multi-step process where order matters, when the user needs to show their reasoning, or when you detect a logical gap in the current reasoning. Triggers on phrases like "step by step", "walk me through", "break this down logically", "what's the reasoning chain", "prove that", "trace the logic", "work through this systematically", "debug this step by step", "what follows from", "build the argument for", "map out the dependencies", "what order should I". Do NOT use for open-ended exploration (use structured-reflection) or parallel concerns (use context-switcher). See the skill body for deep, quick, and default invocation modes.
