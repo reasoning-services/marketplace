@@ -1,8 +1,8 @@
 {
   "name": "reasoning-services-marketplace",
   "metadata": {
-    "description": "4 reasoning engines + 6 skills for structured thinking. Isolated MCP sessions that don't pollute your context or reinforce your biases.",
-    "version": "2.2.0"
+    "description": "10 reasoning engines + 12 skills for structured thinking. Isolated MCP sessions that don't pollute your context or reinforce your biases.",
+    "version": "2.3.0"
   },
   "owner": {
     "name": "reasoning-services",
@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "reasoning-services",
-      "description": "4 reasoning engines + 6 skills for structured thinking. Isolated MCP sessions that don't pollute context or reinforce biases. Decision matrices, multi-perspective analysis, step-by-step logic, and reflection sessions — with auto-triggering skills that teach Claude when and how to use each tool.",
+      "description": "10 reasoning engines + 12 skills for structured thinking. Isolated MCP sessions that don't pollute context or reinforce biases. Decision matrices, multi-perspective analysis, thought graphs, adversarial review, deterministic logic proofs, hindsight-bias correction, and reflection — with auto-triggering skills that teach Claude when and how to use each engine.",
       "source": "./reasoning-services",
       "author": {
         "name": "reasoning-services",
@@ -29,7 +29,13 @@
         "cognitive",
         "bias",
         "perspectives",
-        "matrix"
+        "matrix",
+        "graph-of-thought",
+        "red-team",
+        "formal-logic",
+        "sat-solver",
+        "premortem",
+        "postmortem"
       ]
     }
   ]

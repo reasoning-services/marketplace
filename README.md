@@ -6,14 +6,14 @@
 
 **Claude is great at thinking. It's terrible at thinking about its own thinking.**
 
-These tools fix that. Four reasoning engines that run in isolated sessions — outside your conversation, outside your biases, outside your context window.
+These tools fix that. Ten reasoning engines that run in isolated sessions — outside your conversation, outside your biases, outside your context window.
 
 ```
 /plugin marketplace add reasoning-services/marketplace
 /plugin install reasoning-services@reasoning-services-marketplace
 ```
 
-That's it. Restart Claude Code. Four tools appear in `/mcp`.
+That's it. Restart Claude Code. Ten engines appear in `/mcp`.
 
 ---
 
@@ -36,6 +36,18 @@ These tools run reasoning **externally**. The thinking happens in isolated MCP s
 **Context Switcher** — *When you need other eyes.* Run the same question from 3-5 stakeholder perspectives in parallel. Surface blind spots you can't see from one viewpoint.
 
 **Sequential Thinking** — *When order matters.* Step-by-step reasoning with confidence tracking. Catches contradictions between steps. Shows the proof, not just the conclusion.
+
+**Graph of Thought** — *When the answer is a combination.* Branch into alternatives, score them, prune the dead ends, then **merge** the survivors. The only engine here that returns an answer none of your starting options contained.
+
+**Devil's Advocate** — *Before you commit.* Attacker, competitor, skeptic and pessimist go at your plan. Premortems, attack trees, assumption challenges. Unanimity in the room is a warning sign, not a green light.
+
+**Formal Logic** — *When "it looks right" isn't enough.* PySAT, SymPy and Z3. Deterministic and LLM-free: satisfiability, entailment, consistency, FOL/SMT proofs, temporal traces. A proof, not a confident opinion.
+
+**Hindsight** — *After it went wrong.* Separates what was actually knowable at the time from what looks obvious now, so your postmortem doesn't produce a rule that would never have fired.
+
+**Iterative Refinement** — *When the first draft never ships.* Draft → critique → revise, with convergence measured rather than guessed at. Stops when the changes stop mattering.
+
+**Free Will** — *For unattended runs.* Control-flow primitives for autonomous loops: wake on a timer, continue under a self-issued instruction, decline a queued item on the record.
 
 ## Chain Them
 
@@ -82,18 +94,34 @@ Watch Claude automatically reflect on the real constraints, gather perspectives 
 
 ## What Gets Installed
 
-4 MCP server connections + 6 skills that teach Claude when and how to use them:
+10 MCP server connections + 12 skills that teach Claude when and how to use them:
 
 | Skill | What it does |
 |-------|-------------|
-| `reasoning-guide` | Auto-detects when you need a reasoning tool and picks the right one |
-| `reflecting-structured` | Teaches Claude how to frame problems for reflection sessions |
-| `deciding-with-matrix` | Teaches Claude how to set up criteria, interpret scores, flag close calls |
-| `switching-perspectives` | Teaches Claude how to pick perspectives that create productive tension |
-| `thinking-sequentially` | Teaches Claude how to set up reasoning chains and interpret confidence |
-| `reasoning-chain` | Orchestrates multi-tool workflows for complex decisions |
+| `reasoning-guide` | Auto-detects when you need a reasoning engine and picks the right one |
+| `reasoning-chain` | Orchestrates multi-engine workflows for complex decisions |
+| `reflecting-structured` | Frames problems for reflection sessions |
+| `deciding-with-matrix` | Sets up criteria, interprets scores, flags close calls |
+| `switching-perspectives` | Picks perspectives that create productive tension |
+| `thinking-sequentially` | Sets up reasoning chains and interprets confidence |
+| `exploring-thought-graphs` | Branches into alternatives, prunes, and **merges** the survivors |
+| `red-teaming-ideas` | Attacks a plan from hostile perspectives before you commit |
+| `proving-with-logic` | Hands logic questions to SAT/SMT solvers instead of judgement |
+| `checking-hindsight-bias` | Separates what was knowable then from what looks obvious now |
+| `refining-iteratively` | Draft → critique → revise until convergence is measured, not guessed |
+| `self-directing` | Control flow for unattended agent loops — pace, continue, decline |
 
 The skills trigger automatically. You don't need to remember tool names.
+
+### Also available via `npx skills`
+
+The whole set installs into 75+ agents — Cursor, Copilot, Cline, Windsurf and the rest — with:
+
+```
+npx skills add reasoning-services/marketplace
+```
+
+That installs the skills. The engines they call need the plugin above (Claude Code) or a client MCP config with your API token — see [reasoning.services/install](https://reasoning.services/install).
 
 ## Auth
 

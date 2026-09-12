@@ -27,6 +27,48 @@
       "headers": {
         "Authorization": "Bearer ${user_config.api_token}"
       }
+    },
+    "graph-of-thought": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/graph-of-thought/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    },
+    "devils-advocate": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/devils-advocate/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    },
+    "formal-logic": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/formal-logic/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    },
+    "hindsight": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/hindsight/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    },
+    "iterative-refinement": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/iterative-refinement/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    },
+    "free-will": {
+      "type": "http",
+      "url": "https://reasoning.services/tools/free-will/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
     }
   }
 }

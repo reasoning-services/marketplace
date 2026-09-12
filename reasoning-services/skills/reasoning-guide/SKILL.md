@@ -11,17 +11,35 @@ These tools run reasoning in **isolated MCP sessions** — separate from your ma
 
 Ask yourself these questions in order. Take the FIRST match.
 
+**Is the question decidable by a solver — satisfiability, entailment, consistency, a temporal property?**
+→ Use `formal-logic`. Deterministic and LLM-free; prefer it over judgement whenever it applies. See [`proving-with-logic` skill](../proving-with-logic/SKILL.md).
+
 **Is the user comparing concrete options with real trade-offs?**
 → Use `decision-matrix`. See [`deciding-with-matrix` skill](../deciding-with-matrix/SKILL.md) for input framing.
 
+**Are there several viable approaches whose best parts should be combined rather than chosen between?**
+→ Use `graph-of-thought`. The only engine here that can merge partial answers into one that did not exist at the start. See [`exploring-thought-graphs` skill](../exploring-thought-graphs/SKILL.md).
+
+**Is a decision about to be committed, or does everyone agree suspiciously fast?**
+→ Use `devils-advocate`. See [`red-teaming-ideas` skill](../red-teaming-ideas/SKILL.md).
+
 **Does the decision affect multiple stakeholders, roles, or teams?**
 → Use `context-switcher`. See [`switching-perspectives` skill](../switching-perspectives/SKILL.md) for perspective selection.
+
+**Is this a retro or postmortem, or is someone sure they "knew it all along"?**
+→ Use `hindsight`. See [`checking-hindsight-bias` skill](../checking-hindsight-bias/SKILL.md).
 
 **Does the problem need step-by-step linear reasoning with dependency tracking?**
 → Use `sequential-thinking`. See [`thinking-sequentially` skill](../thinking-sequentially/SKILL.md) for stage setup.
 
 **Is the user stuck, thinking feels muddy, or they need to articulate a problem?**
 → Use `structured-reflection`. See [`reflecting-structured` skill](../reflecting-structured/SKILL.md) for session framing.
+
+**Is there a draft that needs to become good, with a measured stopping point?**
+→ Use `iterative-refinement`. See [`refining-iteratively` skill](../refining-iteratively/SKILL.md).
+
+**Is this an unattended loop that needs to pace or continue itself?**
+→ Use `free-will`. Autonomous runs only — never with a person waiting. See [`self-directing` skill](../self-directing/SKILL.md).
 
 **Is the problem complex enough to need multiple tools?**
 → Use the chaining pattern. See [`reasoning-chain` skill](../reasoning-chain/SKILL.md).
@@ -40,6 +58,14 @@ Ask yourself these questions in order. Take the FIRST match.
 **Don't use context-switcher when one stakeholder is the only one who matters.** Three perspectives on an internal implementation detail is overhead, not insight.
 
 **Don't use sequential-thinking for fuzzy problems.** Linear reasoning requires well-defined premises. Muddy problems belong in structured-reflection first.
+
+**Don't use graph-of-thought when the options are fixed.** If nothing can be merged, you want decision-matrix. A graph that never aggregates is a matrix with worse ergonomics.
+
+**Don't use formal-logic on questions of degree or value.** Solvers decide true and false, not "better". A rigorous answer to a mis-modelled question carries unearned authority.
+
+**Don't run devils-advocate after the decision is locked.** Adversarial review used to ratify a commitment is theatre.
+
+**Don't use free-will in an interactive session.** With a person present, they set the pace and they decide what gets skipped.
 
 ## Key Principle
 
