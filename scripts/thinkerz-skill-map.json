@@ -1,0 +1,9 @@
+{
+  "context-switcher-mcp/skills/multi-perspective-analysis": "context-switcher",
+  "decision-matrix-mcp/skills/weighted-decision-matrix": "decision-matrix",
+  "devil-advocate-mcp/skills/adversarial-review": "devils-advocate",
+  "formal-logic-mcp/skills/formal-logic-checks": "formal-logic",
+  "hindsight-mcp/skills/hindsight-bias-check": "hindsight",
+  "rubber-duck-mcp/skills/rubber-duck-reflection": "structured-reflection",
+  "recursive-companion-mcp/src/recursive_companion_mcp/skills/iterative-refinement": "iterative-refinement"
+}
