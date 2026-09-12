@@ -62,6 +62,20 @@ Run multiple turns using `reflect`. Each call builds on prior session state. The
 
 Call `get_insights` to retrieve synthesized takeaways. Don't call it after the first turn — wait until the session has developed substance.
 
+### Closing, Pausing, Returning
+
+Sessions here are durable, and most of this server's surface is about coming back to one. Skipping it means every reflection is a throwaway.
+
+- **`conclude_reflection(session_id)`** — synthesizes the session into conclusions and next steps. This is the proper ending, not just stopping. Call it once the session has reached clarity; abandoning a session mid-thread loses the synthesis.
+- **`mark_key_moment(session_id, message_index)`** — bookmarks a breakthrough as it happens. Cheap to call and the thing that makes a long session navigable later. When a turn visibly shifts the user's framing, mark it then — you will not find it again by scrolling.
+- **`pause_session(session_id, current_thought)`** — preserves context for later, generating a summary with the same model that ran the reflection. Pass `current_thought` so the resume has somewhere to start.
+- **`resume_session(session_id)`** — picks a paused session back up with full context. Use after `pause_session`, not instead of `start_reflection`.
+- **`current_session()`** — the most recent session without needing its id. The right first call when the user says "back to what we were working through".
+- **`list_sessions()`** — paginated with `cursor` and `page_size`, filterable by `topic_contains`, `date_from`, `date_to` and `style`. Use the filters; an unfiltered list of every session the user has ever run is not an answer.
+- **`get_session_history(session_id)`** — the full conversation of one session. Use it when the evolution of the thinking matters, not just the conclusion.
+
+**Default behaviour:** before starting a new session on a topic the user has clearly touched before, check `current_session` or `list_sessions` with `topic_contains` first. Resuming beats restarting — the accumulated context is what makes these sessions good, and a fresh session throws it away.
+
 ## Intensity Adaptation
 
 This tool adapts session depth based on your framing:

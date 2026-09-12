@@ -34,6 +34,22 @@ Don't just send names. Include enough context that the evaluator can distinguish
 
 Use `start_decision_analysis_tool` with topic, options, and initial_criteria. Then call `evaluate_options_tool` to run scoring. Finally, `get_decision_matrix_tool` for the full scored matrix.
 
+**Input limits, so you don't discover them the hard way:** `topic` must be under 500 characters and each option name under 200. Over-length topics fail with a message that does not state the actual length — count before you send.
+
+### Building the Matrix Incrementally
+
+`start_decision_analysis_tool` does not have to be the whole setup, and it usually should not be.
+
+- **`add_option_tool(session_id, option_name, description)`** — adds an option, or upserts a description onto one created without it. **`evaluate_options_tool` fails with `options_missing_descriptions` until every option has a description**, so options created bare in the initial call must be filled in here before scoring. This is a required step, not an optional one.
+- **`add_criterion_tool(session_id, name, description, weight)`** — adds a weighted criterion after the fact. Use it when framing the options surfaces a factor you missed; the description is what the scorer actually reads, so write it as scoring instructions, not a label.
+- **`current_session_tool()`** — topic and status of the most recent analysis without its id.
+
+### The Call Most Sessions Skip
+
+**`detect_disagreements_tool(session_id)`** — compares scoring across two or more evaluation runs and reports where they diverge most.
+
+Run `evaluate_options_tool` twice, then call this. A criterion that scores consistently across runs is measuring something real; one that swings is measuring the scorer's mood, and any margin resting on it is noise. When a decision is close or high-stakes, this is what separates a result you can defend from one that merely has numbers on it — and it is the fastest way to catch criteria whose descriptions were too vague to score stably.
+
 ## Intensity Adaptation
 
 This tool scales analysis depth based on your framing:

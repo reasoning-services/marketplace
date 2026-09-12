@@ -28,6 +28,8 @@ Set `total_thoughts` before starting. Match it to the problem:
 
 If the chain needs extension mid-session, state it explicitly before adding steps.
 
+**`clear_history()`** wipes the accumulated thought history. The server carries prior thoughts forward, so starting an unrelated chain without clearing means the new reasoning inherits context from the old one — which is exactly the cross-contamination this tool exists to avoid. Clear when switching to a genuinely different problem; do not clear mid-chain, since the accumulated steps are what contradiction detection compares against.
+
 ## Stage Structure
 
 Each `process_thought` call is one step. The server maintains chain state across calls.

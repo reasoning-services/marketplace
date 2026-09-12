@@ -41,6 +41,19 @@ Use `start_context_analysis` with topic and initial perspectives (3-5 recommende
 
 Use `analyze_from_perspectives_stream` for deep sessions — it produces richer per-perspective analysis and streams output progressively.
 
+### Picking Perspectives You Wouldn't Have Picked
+
+The quality ceiling of this tool is set entirely by the perspective list, and the list you write from inside the problem is the one already shaped by your blind spots. Two tools exist to break that, and skipping them is how sessions end up confirming what you walked in with.
+
+- **`recommend_perspectives(request)`** — reads the problem and suggests the viewpoints worth running. Call it before committing to a list whenever the domain is unfamiliar or the stakes are real. If it returns a perspective you would not have chosen, that is the one most likely to earn its place.
+- **`list_templates()`** — pre-configured perspective sets for common decision shapes. Faster than composing from scratch, and a reasonable starting point to then extend.
+- **`add_perspective(request)`** — adds a domain-specific lens mid-session when the standard technical / business / user / risk set misses something crucial. A regulated product may need a compliance auditor; a migration may need the team that has to operate it at 3am.
+
+### Reading the Session Back
+
+- **`get_analysis(session_id, analysis_index, perspective)`** — the actual response text for one analysis round. `get_session` returns summaries *without* response bodies, so when you need what a perspective really said — to quote it, or to check a synthesis against it — this is the call. Pass `perspective` to narrow to one voice.
+- **`current_session()`** — the most recent session without its id. Use it when resuming rather than starting a second analysis of the same question.
+
 ## Intensity Adaptation
 
 This tool scales breadth and depth based on your framing:
