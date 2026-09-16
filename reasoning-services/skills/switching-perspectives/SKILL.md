@@ -51,7 +51,7 @@ The quality ceiling of this tool is set entirely by the perspective list, and th
 
 ### Reading the Session Back
 
-- **`get_analysis(session_id, analysis_index, perspective)`** — the actual response text for one analysis round. `get_session` returns summaries *without* response bodies, so when you need what a perspective really said — to quote it, or to check a synthesis against it — this is the call. Pass `perspective` to narrow to one voice.
+- **`get_analysis(session_id, analysis_index, perspective)`** — the actual response text for one analysis round. Session summaries return *without* response bodies, so when you need what a perspective really said — to quote it, or to check a synthesis against it — this is the call. Pass `perspective` to narrow to one voice.
 - **`current_session()`** — the most recent session without its id. Use it when resuming rather than starting a second analysis of the same question.
 
 ## Intensity Adaptation

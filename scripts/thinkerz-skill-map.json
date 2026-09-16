@@ -5,5 +5,6 @@
   "formal-logic-mcp/skills/formal-logic-checks": "formal-logic",
   "hindsight-mcp/skills/hindsight-bias-check": "hindsight",
   "rubber-duck-mcp/skills/rubber-duck-reflection": "structured-reflection",
-  "recursive-companion-mcp/src/recursive_companion_mcp/skills/iterative-refinement": "iterative-refinement"
+  "recursive-companion-mcp/src/recursive_companion_mcp/skills/iterative-refinement": "iterative-refinement",
+  "graph-of-thought-mcp/src/graph_of_thought_mcp/skills/graph-of-thought": "graph-of-thought"
 }

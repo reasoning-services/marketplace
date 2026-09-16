@@ -33,6 +33,12 @@ Stepping one iteration at a time is the point: you can read each cycle's critiqu
 
 **`list_refinement_sessions()`** — paginated list of active sessions, with `cursor` and `page_size`. Use it when returning to work you left open.
 
+**`get_final_result(session_id)`** — retrieves the final converged draft output without running another iteration.
+
+**`abort_refinement(session_id)`** — stops refinement immediately and discards uncommitted revisions.
+
+**`quick_refine(prompt, domain)`** — one-shot fast refinement pass when full multi-round convergence is unnecessary.
+
 ## Reading Convergence
 
 Convergence measures how much the latest revision changed. It is a stopping signal, not a quality score.

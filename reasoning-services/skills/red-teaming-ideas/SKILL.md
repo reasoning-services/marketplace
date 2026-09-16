@@ -44,6 +44,8 @@ Run the ones that fit. They are independent, not a required sequence.
 
 **`add_perspective(session_id, name, description, custom_prompt)`** — when the standard lenses miss your domain. A regulated-industry plan may need a compliance auditor; a consumer product may need a hostile journalist.
 
+**`get_analysis(request)`** — retrieves the complete adversarial analysis report, vulnerabilities, and attack vectors for an existing session.
+
 ## Synthesizing
 
 `synthesize_challenges(session_id)` — clusters findings across every analysis, resolves conflicts between perspectives, and returns prioritized recommendations.

@@ -19,3 +19,6 @@ CLAUDE.md
 *.local
 .env
 .env.*
+.claude/
+*.local.json
+
