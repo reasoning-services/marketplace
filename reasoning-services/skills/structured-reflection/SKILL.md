@@ -1,5 +1,5 @@
 ---
-name: reflecting-structured
+name: structured-reflection
 description: "Work through muddy, circular or stuck thinking in an isolated reflection session. Use when a problem needs articulation before it can be solved, or the main thread is too cluttered to think in."
 ---
 

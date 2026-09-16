@@ -35,9 +35,9 @@ Stepping one iteration at a time is the point: you can read each cycle's critiqu
 
 **`get_final_result(session_id)`** — retrieves the final converged draft output without running another iteration.
 
-**`abort_refinement(session_id)`** — stops refinement immediately and discards uncommitted revisions.
+**`abort_refinement(session_id)`** — stops refinement immediately and discards uncommitted revisions. Use when a session has gone off-track and restarting clean is cheaper than continuing.
 
-**`quick_refine(prompt, domain)`** — one-shot fast refinement pass when full multi-round convergence is unnecessary.
+**`quick_refine(prompt, domain)`** — one-shot refinement pass without multi-round convergence. Use when a single high-quality critique pass is sufficient and iterative convergence is unnecessary overhead.
 
 ## Reading Convergence
 

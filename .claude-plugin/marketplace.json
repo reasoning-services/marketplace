@@ -2,7 +2,7 @@
   "name": "reasoning-services-marketplace",
   "metadata": {
     "description": "10 reasoning engines + 12 skills for structured thinking. Isolated MCP sessions that don't pollute your context or reinforce your biases.",
-    "version": "2.3.0"
+    "version": "2.4.0"
   },
   "owner": {
     "name": "reasoning-services",

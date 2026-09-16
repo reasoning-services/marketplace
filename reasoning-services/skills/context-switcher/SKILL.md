@@ -1,5 +1,5 @@
 ---
-name: switching-perspectives
+name: context-switcher
 description: "Analyse one question from several stakeholder perspectives in parallel to surface blind spots. Use when a decision crosses teams, buy-in matters, or the user is locked into a single viewpoint."
 ---
 

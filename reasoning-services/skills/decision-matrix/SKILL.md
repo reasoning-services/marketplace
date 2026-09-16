@@ -1,5 +1,5 @@
 ---
-name: deciding-with-matrix
+name: decision-matrix
 description: "Compare 2-6 concrete options against weighted criteria with structured scoring. Use when trade-offs are real and factors matter at different weights: technology, vendor, or resourcing choices."
 ---
 

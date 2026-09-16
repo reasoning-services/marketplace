@@ -1,5 +1,5 @@
 ---
-name: thinking-sequentially
+name: sequential-thinking
 description: "Step-by-step reasoning with confidence tracking and contradiction detection. Use when each step depends on the last: proofs, argument chains, systematic debugging, ordered planning."
 ---
 
