@@ -31,7 +31,7 @@ Stepping one iteration at a time is the point: you can read each cycle's critiqu
 
 **`current_session()`** — the active session's details without needing its id.
 
-**`list_refinement_sessions()`** — paginated list of active sessions, with `cursor` and `page_size`. Use it when returning to work you left open.
+**`list_sessions()`** — paginated list of active sessions, with `cursor` and `page_size`. Use it when returning to work you left open.
 
 **`get_final_result(session_id)`** — retrieves the final converged draft output without running another iteration.
 
