@@ -1,6 +1,6 @@
 {
   "name": "reasoning-services",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "10 reasoning engines + 12 skills for structured thinking. Isolated MCP sessions that don't pollute context or reinforce biases. Decision matrices, multi-perspective analysis, thought graphs, adversarial review, deterministic logic proofs, hindsight-bias correction, and reflection — with auto-triggering skills that teach Claude when and how to use each engine.",
   "keywords": [
     "reasoning",
@@ -30,7 +30,7 @@
   "userConfig": {
     "api_token": {
       "title": "API Token",
-      "description": "Your reasoning.services API token — find it at reasoning.services/dashboard under Credentials",
+      "description": "Optional legacy API token. Leave blank to use OAuth 2.1 (recommended). Find tokens at reasoning.services/dashboard under Credentials",
       "type": "string",
       "sensitive": true
     }

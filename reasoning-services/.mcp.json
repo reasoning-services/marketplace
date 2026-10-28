@@ -2,73 +2,43 @@
   "mcpServers": {
     "structured-reflection": {
       "type": "http",
-      "url": "https://reasoning.services/tools/structured-reflection/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/structured-reflection/mcp"
     },
     "decision-matrix": {
       "type": "http",
-      "url": "https://reasoning.services/tools/decision-matrix/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/decision-matrix/mcp"
     },
     "context-switcher": {
       "type": "http",
-      "url": "https://reasoning.services/tools/context-switcher/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/context-switcher/mcp"
     },
     "sequential-thinking": {
       "type": "http",
-      "url": "https://reasoning.services/tools/sequential-thinking/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/sequential-thinking/mcp"
     },
     "graph-of-thought": {
       "type": "http",
-      "url": "https://reasoning.services/tools/graph-of-thought/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/graph-of-thought/mcp"
     },
     "devils-advocate": {
       "type": "http",
-      "url": "https://reasoning.services/tools/devils-advocate/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/devils-advocate/mcp"
     },
     "formal-logic": {
       "type": "http",
-      "url": "https://reasoning.services/tools/formal-logic/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/formal-logic/mcp"
     },
     "hindsight": {
       "type": "http",
-      "url": "https://reasoning.services/tools/hindsight/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/hindsight/mcp"
     },
     "iterative-refinement": {
       "type": "http",
-      "url": "https://reasoning.services/tools/iterative-refinement/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/iterative-refinement/mcp"
     },
     "free-will": {
       "type": "http",
-      "url": "https://reasoning.services/tools/free-will/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_token}"
-      }
+      "url": "https://reasoning.services/tools/free-will/mcp"
     }
   }
 }
